@@ -1,0 +1,42 @@
+#N canvas 349 701 588 67 10;
+#N canvas 426 1015 913 261 admin-wires 0;
+#X obj 269 77 cnv 15 307 32 empty empty empty 20 12 0 14 #7db0e3 #404040
+0;
+#X obj 111 84 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 238 84 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 10 84 Toggle Purchases;
+#X obj 447 18 loadbang;
+#X obj 111 228 s %serveradmin%-purchasetoggle;
+#X obj 238 203 s %serveradmin%-instrumenttoggle;
+#X floatatom 414 84 5 0 0 0 - - - 0, f 5;
+#X obj 338 84 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 273 84 Add Points;
+#X text 362 84 Socket #;
+#X obj 414 178 s %serveradmin%-pointaddsocket;
+#X obj 338 157 s %serveradmin%-pointadd;
+#X obj 556 85 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 556 118 metro 100;
+#X text 137 84 Mute Instruments;
+#X obj 238 121 == 0;
+#X text 461 84 Auto Add Points;
+#X obj 238 48 == 0;
+#X obj 38 18 r %toadminpatch%-purchasetoggle;
+#X obj 238 18 r %toadminpatch%-instrumenttoggle;
+#X obj 447 41 s %serveradmin%-patchlaunch;
+#X connect 1 0 5 0;
+#X connect 2 0 16 0;
+#X connect 4 0 21 0;
+#X connect 7 0 11 0;
+#X connect 8 0 12 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 16 0 6 0;
+#X connect 18 0 2 0;
+#X connect 19 0 1 0;
+#X connect 20 0 18 0;
+#X coords 0 -1 1 1 575 44 2 6 71;
+#X restore 5 10 pd admin-wires;
