@@ -962,35 +962,35 @@ response;
 #X restore 23 394 pd auth-system;
 #X obj 23 337 route auth chat connect disconnect like purchase %instruments%
 , f 68;
-#N canvas 674 459 768 301 instruments 0;
+#N canvas 498 34 768 301 instruments 0;
 #X obj 9 8 inlet;
 #X text 377 33 serverinstrument \$0-new-connection 0 0 0 %instr1wt% %instr1env% %instr1nd% %instr1notes% %instr1% \$0-toserver
 ;
-#X obj 9 248 serverinstrument \$0-new-connection 0 0 0 %instr1wt% %instr1env%
-%instr1nd% %instr1notes% %instr1% \$0-toserver;
 #X obj 9 33 route %instr1% %instr2% %instr3% %instr4% %instr5% %instr6%
 ;
-#X obj 67 213 serverinstrument \$0-new-connection 0 0 0 %instr2wt%
-%instr2env% %instr2nd% %instr2notes% %instr2% \$0-toserver;
-#X obj 126 178 serverinstrument \$0-new-connection 0 0 0 %instr3wt%
-%instr3env% %instr3nd% %instr3notes% %instr3% \$0-toserver;
-#X obj 184 143 serverinstrument \$0-new-connection 0 0 0 %instr4wt%
-%instr4env% %instr4nd% %instr4notes% %instr4% \$0-toserver;
-#X obj 243 108 serverinstrument \$0-new-connection 0 0 0 %instr5wt%
-%instr5env% %instr5nd% %instr5notes% %instr5% \$0-toserver;
-#X obj 301 73 serverinstrument \$0-new-connection 0 0 0 %instr6wt%
-%instr6env% %instr6nd% %instr6notes% %instr6% \$0-toserver;
 #X text 364 249 Server instruments - hold wavetable \,  envelope \,  and
 ;
 #X text 364 261 note duration information to sync between all clients.
 ;
-#X connect 0 0 3 0;
-#X connect 3 0 2 0;
-#X connect 3 1 4 0;
-#X connect 3 2 5 0;
-#X connect 3 3 6 0;
-#X connect 3 4 7 0;
-#X connect 3 5 8 0;
+#X obj 9 248 serverinstrument \$0-new-connection %instr1fx% 0 0 %instr1wt%
+%instr1env% %instr1nd% %instr1notes% %instr1% \$0-toserver;
+#X obj 67 213 serverinstrument \$0-new-connection %instr2fx% 0 0 %instr2wt%
+%instr2env% %instr2nd% %instr2notes% %instr2% \$0-toserver;
+#X obj 126 178 serverinstrument \$0-new-connection %instr3fx% 0 0 %instr3wt%
+%instr3env% %instr3nd% %instr3notes% %instr3% \$0-toserver;
+#X obj 184 143 serverinstrument \$0-new-connection %instr4fx% 0 0 %instr4wt%
+%instr4env% %instr4nd% %instr4notes% %instr4% \$0-toserver;
+#X obj 243 108 serverinstrument \$0-new-connection %instr5fx% 0 0 %instr5wt%
+%instr5env% %instr5nd% %instr5notes% %instr5% \$0-toserver;
+#X obj 301 73 serverinstrument \$0-new-connection %instr6fx% 0 0 %instr6wt%
+%instr6env% %instr6nd% %instr6notes% %instr6% \$0-toserver;
+#X connect 0 0 2 0;
+#X connect 2 0 5 0;
+#X connect 2 1 6 0;
+#X connect 2 2 7 0;
+#X connect 2 3 8 0;
+#X connect 2 4 9 0;
+#X connect 2 5 10 0;
 #X restore 337 431 pd instruments;
 #X obj 337 410 gate 1;
 #X obj 279 410 gate 1;

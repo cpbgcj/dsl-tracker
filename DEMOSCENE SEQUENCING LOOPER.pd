@@ -958,13 +958,6 @@ you are connected to a server., f 32;
 #X obj 130 324 s \$0-writei1env;
 #X obj 334 324 s \$0-instr1notes;
 #X obj 230 324 s \$0-instr1nd-r;
-#X obj 30 300 route %instr1wt% %instr1env% %instr1nd% %instr1notes%
-;
-#X obj 9 457 wavetablesynth \$0-instr1notes \$0-writei1wt \$0-writei1env
-\$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes% %instr1%
-\$0-toserver;
-#X text 1115 43 wavetablesynth \$0-instr1notes \$0-writei1wt \$0-writei1env \$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes% %instr1% \$0-toserver
-;
 #X obj 395 18 tosymbol;
 #X symbolatom 395 43 31 0 0 0 - - - 0, f 31;
 #X obj 9 390 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
@@ -977,35 +970,22 @@ you are connected to a server., f 32;
 #000000 0 1;
 #X text 209 389 Channel 2;
 #X obj 189 362 r \$0-ch2toggle;
-#X obj 189 457 wavetablesynth \$0-instr2notes \$0-writei2wt \$0-writei2env
-\$0-instr2nd-r %instr2wt% %instr2env% %instr2nd% %instr2notes% %instr2%
-\$0-toserver;
-#X obj 88 254 route %instr2wt% %instr2env% %instr2nd% %instr2notes%
-;
 #X obj 88 278 s \$0-writei2wt;
 #X obj 188 278 s \$0-writei2env;
 #X obj 288 278 s \$0-instr2nd-r;
 #X obj 392 278 s \$0-instr2notes;
-#X obj 147 207 route %instr3wt% %instr3env% %instr3nd% %instr3notes%
-;
 #X obj 147 231 s \$0-writei3wt;
 #X obj 247 231 s \$0-writei3env;
 #X obj 347 231 s \$0-instr3nd-r;
 #X obj 451 231 s \$0-instr3notes;
-#X obj 205 160 route %instr4wt% %instr4env% %instr4nd% %instr4notes%
-;
 #X obj 205 184 s \$0-writei4wt;
 #X obj 305 184 s \$0-writei4env;
 #X obj 405 184 s \$0-instr4nd-r;
 #X obj 509 184 s \$0-instr4notes;
-#X obj 264 114 route %instr5wt% %instr5env% %instr5nd% %instr5notes%
-;
 #X obj 264 138 s \$0-writei5wt;
 #X obj 364 138 s \$0-writei5env;
 #X obj 464 138 s \$0-instr5nd-r;
 #X obj 568 138 s \$0-instr5notes;
-#X obj 322 70 route %instr6wt% %instr6env% %instr6nd% %instr6notes%
-;
 #X obj 322 94 s \$0-writei6wt;
 #X obj 422 94 s \$0-writei6env;
 #X obj 522 94 s \$0-instr6nd-r;
@@ -1016,34 +996,16 @@ you are connected to a server., f 32;
 #000000 0 1;
 #X obj 729 390 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X obj 909 390 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 908 390 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X text 389 389 Channel 3;
 #X text 569 389 Channel 4;
 #X text 749 389 Channel 5;
-#X text 929 389 Channel 6;
-#X obj 909 362 r \$0-ch6toggle;
+#X text 928 389 Channel 6;
+#X obj 908 362 r \$0-ch6toggle;
 #X obj 729 362 r \$0-ch5toggle;
 #X obj 549 362 r \$0-ch4toggle;
 #X obj 369 362 r \$0-ch3toggle;
-#X obj 369 457 wavetablesynth \$0-instr3notes \$0-writei3wt \$0-writei3env
-\$0-instr3nd-r %instr3wt% %instr3env% %instr3nd% %instr3notes% %instr3%
-\$0-toserver;
-#X obj 549 457 wavetablesynth \$0-instr4notes \$0-writei4wt \$0-writei4env
-\$0-instr4nd-r %instr4wt% %instr4env% %instr4nd% %instr4notes% %instr4%
-\$0-toserver;
-#X obj 729 457 wavetablesynth \$0-instr5notes \$0-writei5wt \$0-writei5env
-\$0-instr5nd-r %instr5wt% %instr5env% %instr5nd% %instr5notes% %instr5%
-\$0-toserver;
-#X obj 909 457 wavetablesynth \$0-instr6notes \$0-writei6wt \$0-writei6env
-\$0-instr6nd-r %instr6wt% %instr6env% %instr6nd% %instr6notes% %instr6%
-\$0-toserver;
-#X text 1115 90 \$1 - instr note send  \;  \$2 - write to wavetable receive name 
-\;  \$3 - write to envelope receive name  \;  \$4 - note duration recieve 
-\;  \$5 - wavetable server channel  \;  \$6 - envelope server channel 
-\;  \$7 - note duration server channel  \;  \$8 - note channel 
-\;  \$9 - %instr#%  \,   instrument specific server channel 
-\;  \$10 - \$0-toserver  \;  ;
 #X obj 455 18 text define -k midi-shortcuts;
 #A set 122 60 \; 115 61 \; 120 62 \; 100 63 \; 99 64 \; 118 65 \; 103
 66 \; 98 67 \; 104 68 \; 110 69 \; 106 70 \; 109 71 \; 44 72 \; 113
@@ -1053,124 +1015,190 @@ you are connected to a server., f 32;
 ;
 #X obj 49 428 hradio 15 0 0 6 \$0-channeltoggle r-null empty 0 -8 0
 10 #fcfcfc #000000 #000000 0;
-#X obj 746 71 r \$0-channeltoggle;
-#X obj 746 231 s \$0-ch1toggle;
-#X obj 760 201 s \$0-ch2toggle;
-#X obj 775 171 s \$0-ch3toggle;
-#X obj 846 231 s \$0-ch4toggle;
-#X obj 860 201 s \$0-ch5toggle;
-#X obj 870 171 s \$0-ch6toggle;
-#X msg 746 122 1;
-#X msg 776 122 0;
-#X msg 806 122 1;
-#X msg 836 122 0;
-#X msg 866 122 1;
-#X msg 896 122 0;
-#X msg 926 122 1;
-#X msg 956 122 0;
-#X msg 986 122 1;
-#X msg 1016 122 0;
-#X msg 1046 122 1;
-#X msg 1076 122 0;
-#X obj 746 96 sel 0 1 2 3 4 5;
-#X obj 869 50 loadbang;
-#X msg 869 71 0;
-#X connect 1 0 9 0;
-#X connect 1 0 14 0;
-#X connect 6 0 2 0;
-#X connect 6 1 3 0;
-#X connect 6 2 5 0;
-#X connect 6 3 4 0;
-#X connect 9 0 10 0;
-#X connect 11 0 7 0;
-#X connect 13 0 11 0;
-#X connect 14 0 6 0;
-#X connect 14 1 19 0;
-#X connect 14 2 24 0;
-#X connect 14 3 29 0;
-#X connect 14 4 34 0;
-#X connect 14 5 39 0;
-#X connect 15 0 18 0;
-#X connect 17 0 15 0;
-#X connect 19 0 20 0;
-#X connect 19 1 21 0;
-#X connect 19 2 22 0;
-#X connect 19 3 23 0;
-#X connect 24 0 25 0;
-#X connect 24 1 26 0;
-#X connect 24 2 27 0;
-#X connect 24 3 28 0;
-#X connect 29 0 30 0;
-#X connect 29 1 31 0;
-#X connect 29 2 32 0;
-#X connect 29 3 33 0;
-#X connect 34 0 35 0;
-#X connect 34 1 36 0;
-#X connect 34 2 37 0;
-#X connect 34 3 38 0;
-#X connect 39 0 40 0;
-#X connect 39 1 41 0;
-#X connect 39 2 42 0;
-#X connect 39 3 43 0;
-#X connect 44 0 56 0;
-#X connect 45 0 57 0;
-#X connect 46 0 58 0;
-#X connect 47 0 59 0;
-#X connect 52 0 47 0;
-#X connect 53 0 46 0;
-#X connect 54 0 45 0;
-#X connect 55 0 44 0;
-#X connect 64 0 83 0;
-#X connect 71 0 65 0;
-#X connect 72 0 66 0;
-#X connect 72 0 68 0;
-#X connect 72 0 70 0;
-#X connect 72 0 69 0;
-#X connect 72 0 67 0;
-#X connect 73 0 66 0;
-#X connect 74 0 67 0;
-#X connect 74 0 65 0;
-#X connect 74 0 69 0;
-#X connect 74 0 68 0;
-#X connect 74 0 70 0;
-#X connect 75 0 67 0;
-#X connect 76 0 70 0;
-#X connect 76 0 66 0;
-#X connect 76 0 65 0;
-#X connect 76 0 69 0;
-#X connect 76 0 68 0;
-#X connect 77 0 68 0;
-#X connect 78 0 70 0;
-#X connect 78 0 69 0;
-#X connect 78 0 67 0;
-#X connect 78 0 66 0;
-#X connect 78 0 65 0;
-#X connect 79 0 69 0;
-#X connect 80 0 70 0;
-#X connect 80 0 68 0;
-#X connect 80 0 67 0;
-#X connect 80 0 66 0;
-#X connect 80 0 65 0;
-#X connect 81 0 70 0;
-#X connect 82 0 69 0;
-#X connect 82 0 68 0;
-#X connect 82 0 67 0;
-#X connect 82 0 66 0;
-#X connect 82 0 65 0;
-#X connect 83 0 71 0;
-#X connect 83 0 72 0;
-#X connect 83 1 73 0;
-#X connect 83 1 74 0;
-#X connect 83 2 75 0;
-#X connect 83 2 76 0;
-#X connect 83 3 77 0;
-#X connect 83 3 78 0;
-#X connect 83 4 79 0;
-#X connect 83 4 80 0;
-#X connect 83 5 81 0;
-#X connect 83 5 82 0;
-#X connect 84 0 85 0;
-#X connect 85 0 83 0;
+#X obj 1106 71 r \$0-channeltoggle;
+#X obj 1106 231 s \$0-ch1toggle;
+#X obj 1120 201 s \$0-ch2toggle;
+#X obj 1135 171 s \$0-ch3toggle;
+#X obj 1206 231 s \$0-ch4toggle;
+#X obj 1220 201 s \$0-ch5toggle;
+#X obj 1230 171 s \$0-ch6toggle;
+#X msg 1106 122 1;
+#X msg 1136 122 0;
+#X msg 1166 122 1;
+#X msg 1196 122 0;
+#X msg 1226 122 1;
+#X msg 1256 122 0;
+#X msg 1286 122 1;
+#X msg 1316 122 0;
+#X msg 1346 122 1;
+#X msg 1376 122 0;
+#X msg 1406 122 1;
+#X msg 1436 122 0;
+#X obj 1106 96 sel 0 1 2 3 4 5;
+#X obj 1229 50 loadbang;
+#X msg 1229 71 0;
+#X text 1105 444 \$1 - instr note send   \;   \$2 - write to wavetable receive name  
+\;   \$3 - write to envelope receive name   \;   \$4 - note duration recieve  
+\;   \$5 - wavetable server channel   \;   \$6 - envelope server channel  
+\;   \$7 - note duration server channel   \;   \$8 - note channel  
+\;   \$9 - %instr#%   \,     instrument specific server channel  
+\;   \$10 - \$0-toserver   \;   \$11 - fx channel  
+\;    \$12 - \$0-tick   \;  ;
+#X obj 441 324 s \$0-instr1fx;
+#X text 1105 397 wavetablesynth \$0-instr1notes \$0-writei1wt \$0-writei1env \$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes% %instr1% \$0-toserver \$0-instr1fx \$0-tick
+;
+#X obj 9 457 wavetablesynth \$0-instr1notes \$0-writei1wt \$0-writei1env
+\$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes% %instr1%
+\$0-toserver \$0-instr1fx \$0-tick;
+#X obj 189 457 wavetablesynth \$0-instr2notes \$0-writei2wt \$0-writei2env
+\$0-instr2nd-r %instr2wt% %instr2env% %instr2nd% %instr2notes% %instr2%
+\$0-toserver \$0-instr2fx \$0-tick;
+#X obj 369 457 wavetablesynth \$0-instr3notes \$0-writei3wt \$0-writei3env
+\$0-instr3nd-r %instr3wt% %instr3env% %instr3nd% %instr3notes% %instr3%
+\$0-toserver \$0-instr3fx \$0-tick;
+#X obj 549 457 wavetablesynth \$0-instr4notes \$0-writei4wt \$0-writei4env
+\$0-instr4nd-r %instr4wt% %instr4env% %instr4nd% %instr4notes% %instr4%
+\$0-toserver \$0-instr4fx \$0-tick;
+#X obj 729 457 wavetablesynth \$0-instr5notes \$0-writei5wt \$0-writei5env
+\$0-instr5nd-r %instr5wt% %instr5env% %instr5nd% %instr5notes% %instr5%
+\$0-toserver \$0-instr5fx \$0-tick;
+#X obj 908 457 wavetablesynth \$0-instr6notes \$0-writei6wt \$0-writei6env
+\$0-instr6nd-r %instr6wt% %instr6env% %instr6nd% %instr6notes% %instr6%
+\$0-toserver \$0-instr6fx \$0-tick;
+#X obj 30 300 route %instr1wt% %instr1env% %instr1nd% %instr1notes%
+%instr1fx%, f 64;
+#X obj 88 254 route %instr2wt% %instr2env% %instr2nd% %instr2notes%
+%instr2fx%, f 64;
+#X obj 147 207 route %instr3wt% %instr3env% %instr3nd% %instr3notes%
+%instr3fx%, f 64;
+#X obj 205 160 route %instr4wt% %instr4env% %instr4nd% %instr4notes%
+%instr4fx%, f 64;
+#X obj 264 114 route %instr5wt% %instr5env% %instr5nd% %instr5notes%
+%instr5fx%, f 64;
+#X obj 322 70 route %instr6wt% %instr6env% %instr6nd% %instr6notes%
+%instr6fx%, f 64;
+#X obj 499 278 s \$0-instr2fx;
+#X obj 558 231 s \$0-instr3fx;
+#X obj 616 184 s \$0-instr4fx;
+#X obj 676 138 s \$0-instr5fx;
+#X obj 734 94 s \$0-instr6fx;
+#N canvas 1609 787 450 300 tickmaster 0;
+#X obj 26 136 s \$0-tick;
+#X obj 26 25 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 45 24 Debug tick;
+#X obj 126 46 metro 150;
+#X obj 126 24 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X restore 892 70 pd tickmaster;
+#X obj 848 263 s \$0-instr1nd-r;
+#X floatatom 841 221 5 0 0 0 - - - 0, f 5;
+#X connect 1 0 6 0;
+#X connect 1 0 11 0;
+#X connect 6 0 7 0;
+#X connect 8 0 75 0;
+#X connect 10 0 8 0;
+#X connect 11 0 81 0;
+#X connect 11 1 82 0;
+#X connect 11 2 83 0;
+#X connect 11 3 84 0;
+#X connect 11 4 85 0;
+#X connect 11 5 86 0;
+#X connect 12 0 76 0;
+#X connect 14 0 12 0;
+#X connect 35 0 77 0;
+#X connect 36 0 78 0;
+#X connect 37 0 79 0;
+#X connect 38 0 80 0;
+#X connect 43 0 38 0;
+#X connect 44 0 37 0;
+#X connect 45 0 36 0;
+#X connect 46 0 35 0;
+#X connect 50 0 69 0;
+#X connect 57 0 51 0;
+#X connect 58 0 52 0;
+#X connect 58 0 54 0;
+#X connect 58 0 56 0;
+#X connect 58 0 55 0;
+#X connect 58 0 53 0;
+#X connect 59 0 52 0;
+#X connect 60 0 53 0;
+#X connect 60 0 51 0;
+#X connect 60 0 55 0;
+#X connect 60 0 54 0;
+#X connect 60 0 56 0;
+#X connect 61 0 53 0;
+#X connect 62 0 56 0;
+#X connect 62 0 52 0;
+#X connect 62 0 51 0;
+#X connect 62 0 55 0;
+#X connect 62 0 54 0;
+#X connect 63 0 54 0;
+#X connect 64 0 56 0;
+#X connect 64 0 55 0;
+#X connect 64 0 53 0;
+#X connect 64 0 52 0;
+#X connect 64 0 51 0;
+#X connect 65 0 55 0;
+#X connect 66 0 56 0;
+#X connect 66 0 54 0;
+#X connect 66 0 53 0;
+#X connect 66 0 52 0;
+#X connect 66 0 51 0;
+#X connect 67 0 56 0;
+#X connect 68 0 55 0;
+#X connect 68 0 54 0;
+#X connect 68 0 53 0;
+#X connect 68 0 52 0;
+#X connect 68 0 51 0;
+#X connect 69 0 57 0;
+#X connect 69 0 58 0;
+#X connect 69 1 59 0;
+#X connect 69 1 60 0;
+#X connect 69 2 61 0;
+#X connect 69 2 62 0;
+#X connect 69 3 63 0;
+#X connect 69 3 64 0;
+#X connect 69 4 65 0;
+#X connect 69 4 66 0;
+#X connect 69 5 67 0;
+#X connect 69 5 68 0;
+#X connect 70 0 71 0;
+#X connect 71 0 69 0;
+#X connect 81 0 2 0;
+#X connect 81 1 3 0;
+#X connect 81 2 5 0;
+#X connect 81 3 4 0;
+#X connect 81 4 73 0;
+#X connect 82 0 15 0;
+#X connect 82 1 16 0;
+#X connect 82 2 17 0;
+#X connect 82 3 18 0;
+#X connect 82 4 87 0;
+#X connect 83 0 19 0;
+#X connect 83 1 20 0;
+#X connect 83 2 21 0;
+#X connect 83 3 22 0;
+#X connect 83 4 88 0;
+#X connect 84 0 23 0;
+#X connect 84 1 24 0;
+#X connect 84 2 25 0;
+#X connect 84 3 26 0;
+#X connect 84 4 89 0;
+#X connect 85 0 27 0;
+#X connect 85 1 28 0;
+#X connect 85 2 29 0;
+#X connect 85 3 30 0;
+#X connect 85 4 90 0;
+#X connect 86 0 31 0;
+#X connect 86 1 32 0;
+#X connect 86 2 33 0;
+#X connect 86 3 34 0;
+#X connect 86 4 91 0;
+#X connect 94 0 93 0;
 #X coords 0 -1 1 1 1079 334 2 5 413;
 #X restore 15 141 pd audio-engine;
 #N canvas 1048 615 466 558 storefront 0;
