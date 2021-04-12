@@ -7,9 +7,9 @@
 0;
 #X obj 830 246 cnv 15 8 8 empty empty Note\ Duration\ (ms) 43 6 0 10
 #ffffff #00ffff 0;
-#X obj 830 147 ggee/image starry-background.png 0 0 158 89 empty empty
+#X obj 830 147 ggee/image ./ui-images/starry-background.png 0 0 158 89 empty empty
 empty 158 89 0 0 10 #000000 0 -8 544 145.5 0 1 1;
-#X obj 830 51 ggee/image starry-background.png 0 0 158 89 empty empty
+#X obj 830 51 ggee/image ./ui-images/starry-background.png 0 0 158 89 empty empty
 empty 158 89 0 0 10 #000000 0 -8 544 145.5 0 1 1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-instr-wt 64 float 16 black #ffc584;
@@ -233,7 +233,7 @@ for debugging;
 #X obj 75 53 s \$0-midion;
 #X obj 830 307 tgl 15 0 s-null \$0-midion empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X obj 827 302 ggee/image transparent.png 0 1 25 25 empty empty empty
+#X obj 827 302 ggee/image ./ui-images/transparent.png 0 1 25 25 empty empty empty
 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X obj 273 6 cnv 15 8 8 empty empty Canvas 24 6 0 10 #ffffff #00ffff
 0;

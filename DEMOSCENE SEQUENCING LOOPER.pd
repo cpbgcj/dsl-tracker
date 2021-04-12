@@ -1,12 +1,12 @@
-#N canvas 546 25 1981 529 10;
+#N canvas 546 25 1981 526 10;
 #X obj 69 224 r \$0-hearticon-r;
 #X obj 69 273 s \$0-hearticon-s;
 #X obj 12 45 r \$0-poweronicon-r;
 #X obj 39 45 r \$0-powerofficon-r;
 #X obj 12 87 s \$0-poweronicon-s;
 #X obj 39 87 s \$0-powerofficon-s;
-#X obj -1 -1 ggee/image neonshiplicious.png 0 0 1984 530 empty empty
-empty 1984 530 1 0 10 #000000 0 -8 544 145.5 0 1 1;
+#X obj -1 -1 ggee/image ./ui-images/neonshiplicious.png 0 0 1974 527
+empty empty empty 1974 527 1 0 10 #000000 0 -8 544 145.5 0 1 1;
 #X symbolatom 19 250 7 0 0 2 - #0-numdisp null 0, f 7;
 #X obj 129 251 bng 15 250 50 0 \$0-openfullchat \$0-openfullchat-r
 Open\ Chat -20 -9 0 10 #0080c0 #0000a0 #ffffff;
@@ -784,52 +784,48 @@ you are connected to a server., f 32;
 #X connect 156 0 88 0;
 #X connect 157 0 73 0;
 #X restore 15 91 pd points-system;
-#N canvas 939 612 1385 472 hud-settings 0;
+#N canvas 545 655 1617 472 hud-settings 0;
 #X msg 20 40 click 1;
 #X obj 20 20 loadbang;
-#X obj 333 128 r \$0-powerofficon-s;
+#X obj 483 128 r \$0-powerofficon-s;
 #X obj 20 70 s \$0-hearticon-r;
 #X text 82 20 Makes the icon clickable;
 #X obj 127 70 s \$0-poweronicon-r;
 #X obj 246 70 s \$0-powerofficon-r;
-#X msg 333 232 open poweroffclick.png;
-#X obj 333 319 s \$0-powerofficon-r;
-#X msg 488 268 open poweroff.png;
-#X obj 488 232 del 500;
-#X obj 380 205 bng 16 250 50 0 \$0-disconnect null-r DISCONNECT -20
+#X obj 483 319 s \$0-powerofficon-r;
+#X obj 698 232 del 500;
+#X obj 530 205 bng 16 250 50 0 \$0-disconnect null-r DISCONNECT -20
 -9 0 10 #ff8080 #0000a0 #000000;
 #X obj 95 204 bng 16 250 50 0 \$0-reconnect null-r CONNECT -13 -9 0
 10 #80ff80 #0000a0 #000000;
-#X obj 631 207 bng 16 250 50 0 \$0-like null-r +1 0 -9 0 10 #0080ff
+#X obj 911 207 bng 16 250 50 0 \$0-like null-r +1 0 -9 0 10 #0080ff
 #0000a0 #000000;
-#X obj 333 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 483 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 312 171 gate;
-#X obj 355 171 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 462 171 gate;
+#X obj 505 171 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 1 1;
-#X msg 412 170 1;
-#X obj 442 169 loadbang;
-#X msg 379 170 0;
-#X obj 488 232 del 500;
-#X obj 488 293 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X msg 562 170 1;
+#X obj 592 169 loadbang;
+#X msg 529 170 0;
+#X obj 698 232 del 500;
+#X obj 698 293 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 488 313 del 10;
-#X obj 608 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 698 313 del 10;
+#X obj 888 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 587 174 gate;
-#X obj 630 174 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 867 174 gate;
+#X obj 910 174 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 1 1;
-#X msg 687 173 1;
-#X obj 717 172 loadbang;
-#X msg 654 173 0;
-#X obj 803 296 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X msg 967 173 1;
+#X obj 997 172 loadbang;
+#X msg 934 173 0;
+#X obj 1143 296 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 803 316 del 10;
-#X msg 608 235 open pixelheart-animation.gif;
-#X msg 803 271 open pixelheart1.png;
-#X obj 608 322 s \$0-hearticon-r;
-#X obj 608 131 r \$0-hearticon-s;
-#X obj 217 232 del 500;
+#X obj 1143 316 del 10;
+#X obj 888 322 s \$0-hearticon-r;
+#X obj 888 131 r \$0-hearticon-s;
+#X obj 287 232 del 500;
 #X obj 62 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X obj 41 171 gate;
@@ -838,117 +834,121 @@ you are connected to a server., f 32;
 #X msg 141 170 1;
 #X obj 171 169 loadbang;
 #X msg 108 170 0;
-#X obj 217 232 del 500;
-#X obj 217 293 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 287 232 del 500;
+#X obj 287 293 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 217 313 del 10;
-#X msg 217 268 open poweron.png;
-#X msg 62 232 open poweronclick.png;
+#X obj 287 313 del 10;
 #X obj 62 319 s \$0-poweronicon-r;
 #X obj 62 128 r \$0-poweronicon-s;
-#X obj 803 235 del 800;
-#X obj 1026 340 s \$0-gear-r;
-#X obj 986 172 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 1143 235 del 800;
+#X obj 1376 340 s \$0-gear-r;
+#X obj 1336 172 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 965 138 gate;
-#X obj 1008 138 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 1315 138 gate;
+#X obj 1358 138 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 1 1;
-#X msg 1065 137 1;
-#X obj 1095 136 loadbang;
-#X msg 1032 137 0;
-#X obj 1181 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X msg 1415 137 1;
+#X obj 1445 136 loadbang;
+#X msg 1382 137 0;
+#X obj 1531 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 1181 280 del 10;
-#X msg 1026 292 set \$1;
-#X floatatom 1026 252 5 0 0 0 - - - 0, f 5;
-#X obj 986 212 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 1531 280 del 10;
+#X msg 1376 292 set \$1;
+#X floatatom 1376 252 5 0 0 0 - - - 0, f 5;
+#X obj 1336 212 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X msg 986 192 1;
-#X msg 1181 235 0;
-#X msg 1136 313 rotate 0 10 10;
-#X obj 1006 111 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X msg 1336 192 1;
+#X msg 1531 235 0;
+#X msg 1486 313 rotate 0 10 10;
+#X obj 1356 111 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 1181 199 del 1000;
-#X msg 1026 313 rotate \$1 16 16;
-#X obj 1026 272 + 10;
-#X obj 986 84 r \$0-gear-s;
-#X obj 986 229 metro 60;
+#X obj 1531 199 del 1000;
+#X msg 1376 313 rotate \$1 16 16;
+#X obj 1376 272 + 10;
+#X obj 1266 84 r \$0-gear-s;
+#X obj 1336 229 metro 60;
+#X msg 62 232 open ./ui-images/poweronclick.png;
+#X msg 287 268 open ./ui-images/poweron.png;
+#X msg 1143 271 open ./ui-images/pixelheart1.png;
+#X msg 888 235 open ./ui-images/pixelheart-animation.gif;
+#X msg 698 268 open ./ui-images/poweroff.png;
+#X msg 483 232 open ./ui-images/poweroffclick.png;
 #X connect 1 0 0 0;
-#X connect 2 0 15 1;
-#X connect 2 0 19 0;
-#X connect 7 0 8 0;
-#X connect 9 0 8 0;
-#X connect 9 0 21 0;
-#X connect 10 0 9 0;
-#X connect 14 0 7 0;
-#X connect 14 0 10 0;
+#X connect 2 0 13 1;
+#X connect 2 0 17 0;
+#X connect 8 0 69 0;
+#X connect 12 0 70 0;
+#X connect 12 0 8 0;
+#X connect 13 0 12 0;
+#X connect 13 0 9 0;
+#X connect 14 0 13 0;
 #X connect 15 0 14 0;
-#X connect 15 0 11 0;
 #X connect 16 0 15 0;
-#X connect 17 0 16 0;
-#X connect 18 0 17 0;
-#X connect 19 0 16 0;
-#X connect 21 0 22 0;
-#X connect 22 0 17 0;
-#X connect 23 0 31 0;
-#X connect 23 0 49 0;
+#X connect 17 0 14 0;
+#X connect 19 0 20 0;
+#X connect 20 0 15 0;
+#X connect 21 0 68 0;
+#X connect 21 0 43 0;
+#X connect 22 0 21 0;
+#X connect 22 0 11 0;
+#X connect 23 0 22 0;
 #X connect 24 0 23 0;
-#X connect 24 0 13 0;
 #X connect 25 0 24 0;
-#X connect 26 0 25 0;
-#X connect 27 0 26 0;
-#X connect 28 0 25 0;
-#X connect 29 0 30 0;
+#X connect 26 0 23 0;
+#X connect 27 0 28 0;
+#X connect 28 0 24 0;
+#X connect 30 0 22 1;
 #X connect 30 0 26 0;
-#X connect 31 0 33 0;
-#X connect 32 0 29 0;
-#X connect 32 0 33 0;
-#X connect 34 0 24 1;
-#X connect 34 0 28 0;
-#X connect 35 0 45 0;
-#X connect 36 0 46 0;
+#X connect 31 0 66 0;
+#X connect 32 0 65 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 33 0 10 0;
+#X connect 34 0 33 0;
+#X connect 35 0 34 0;
 #X connect 36 0 35 0;
-#X connect 37 0 36 0;
-#X connect 37 0 12 0;
-#X connect 38 0 37 0;
-#X connect 39 0 38 0;
-#X connect 40 0 39 0;
-#X connect 41 0 38 0;
-#X connect 43 0 44 0;
-#X connect 44 0 39 0;
-#X connect 45 0 43 0;
-#X connect 45 0 47 0;
-#X connect 46 0 47 0;
-#X connect 48 0 37 1;
-#X connect 48 0 41 0;
-#X connect 49 0 32 0;
-#X connect 51 0 62 0;
-#X connect 51 0 66 0;
-#X connect 52 0 51 0;
-#X connect 53 0 52 0;
-#X connect 54 0 53 0;
-#X connect 55 0 54 0;
-#X connect 56 0 53 0;
-#X connect 57 0 58 0;
-#X connect 57 0 64 0;
-#X connect 58 0 54 0;
-#X connect 59 0 60 0;
-#X connect 60 0 67 0;
-#X connect 60 0 68 0;
-#X connect 61 0 70 0;
-#X connect 62 0 61 0;
-#X connect 63 0 57 0;
-#X connect 63 0 61 0;
-#X connect 63 0 60 0;
-#X connect 64 0 50 0;
-#X connect 66 0 63 0;
-#X connect 67 0 50 0;
-#X connect 68 0 59 0;
-#X connect 69 0 65 0;
-#X connect 69 0 52 1;
-#X connect 70 0 60 0;
+#X connect 37 0 34 0;
+#X connect 39 0 40 0;
+#X connect 40 0 35 0;
+#X connect 42 0 33 1;
+#X connect 42 0 37 0;
+#X connect 43 0 67 0;
+#X connect 45 0 56 0;
+#X connect 45 0 60 0;
+#X connect 46 0 45 0;
+#X connect 47 0 46 0;
+#X connect 48 0 47 0;
+#X connect 49 0 48 0;
+#X connect 50 0 47 0;
+#X connect 51 0 52 0;
+#X connect 51 0 58 0;
+#X connect 52 0 48 0;
+#X connect 53 0 54 0;
+#X connect 54 0 61 0;
+#X connect 54 0 62 0;
+#X connect 55 0 64 0;
+#X connect 56 0 55 0;
+#X connect 57 0 51 0;
+#X connect 57 0 55 0;
+#X connect 57 0 54 0;
+#X connect 58 0 44 0;
+#X connect 60 0 57 0;
+#X connect 61 0 44 0;
+#X connect 62 0 53 0;
+#X connect 63 0 59 0;
+#X connect 63 0 46 1;
+#X connect 64 0 54 0;
+#X connect 65 0 41 0;
+#X connect 66 0 39 0;
+#X connect 66 0 41 0;
+#X connect 67 0 27 0;
+#X connect 67 0 29 0;
+#X connect 68 0 29 0;
+#X connect 69 0 7 0;
+#X connect 69 0 19 0;
+#X connect 70 0 7 0;
 #X restore 15 116 pd hud-settings;
-#X obj 19 147 ggee/image pixeljams.gif 0 0 32 32 empty empty empty
+#X obj 19 147 ggee/image ./ui-images/pixeljams.gif 0 0 32 32 empty empty empty
 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #N canvas 399 536 1519 771 audio-engine 0;
 #X obj 124 428 cnv 15 8 8 empty empty Select\ Channel 24 6 0 10 #ffffff
@@ -1201,9 +1201,9 @@ you are connected to a server., f 32;
 #X connect 94 0 93 0;
 #X coords 0 -1 1 1 1079 334 2 5 413;
 #X restore 15 141 pd audio-engine;
-#N canvas 1048 615 466 558 storefront 0;
-#X obj -15 -1 ggee/image neonstoreportrait.gif 0 0 467 560 empty empty
-empty 467 560 1 0 10 #000000 0 -8 100 120 0 1 1;
+#N canvas 1048 615 464 558 storefront 0;
+#X obj -15 -1 ggee/image ./ui-images/neonstoreportrait.gif 0 0 465
+558 empty empty empty 465 558 1 0 10 #000000 0 -8 100 120 0 1 1;
 #X obj 268 15 cnv 15 8 8 empty empty Current\ points 43 6 0 10 #e0e0e0
 #ffffff 0;
 #X obj 268 15 cnv 15 8 8 empty empty Buy\ weird\ chat\ stuff\ with\ likes!
@@ -1235,19 +1235,19 @@ empty 467 560 1 0 10 #000000 0 -8 100 120 0 1 1;
 #000000 0 1;
 #X text 51 21 User Options;
 #X text 50 55 Open Chat History on Connect;
-#X obj 12 14 ggee/image gear.png 0 0 32 32 empty empty empty 32 32
-1 0 10 #000000 0 -8 16 16 0 1 1;
+#X obj 12 14 ggee/image ./ui-images/gear.png 0 0 32 32 empty empty
+empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X coords 0 0 1 1 32 32 0;
 #X scroll 1;
 #X restore 122 40 pd options;
 #X coords 0 -1 1 1 1079 334 2 15 141;
 #X restore 881 22 pd logic-systems;
-#X obj 69 241 ggee/image pixelheart1.png 1 1 32 32 empty empty empty
-32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
-#X obj 12 62 ggee/image poweron.png 0 1 25 25 empty empty empty 25
-25 1 0 10 #000000 0 -8 12.5 12.5 0 1 1;
-#X obj 39 62 ggee/image poweroff.png 0 1 25 25 empty empty empty 25
-25 1 0 10 #000000 0 -8 12.5 12.5 0 1 1;
+#X obj 69 241 ggee/image ./ui-images/pixelheart1.png 1 1 32 32 empty
+empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
+#X obj 12 62 ggee/image ./ui-images/poweron.png 0 1 25 25 empty empty
+empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 1 1;
+#X obj 39 62 ggee/image ./ui-images/poweroff.png 0 1 25 25 empty empty
+empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 1 1;
 #X obj 19 218 cnv 15 8 8 empty empty Most\ Recent\ Message -3 -11 0
 14 #e0e0e0 #ffffff 0;
 #X obj 19 128 cnv 15 8 8 empty empty Username -3 -11 0 14 #e0e0e0 #ffffff
@@ -1261,8 +1261,8 @@ empty 467 560 1 0 10 #000000 0 -8 100 120 0 1 1;
 #X symbolatom 19 128 115 0 0 2 - #0-username-r #0-username 1, f 115
 ;
 #N canvas 45 350 441 244 gear 0;
-#X obj 10 31 ggee/image gear.png 0 1 32 32 1003-gear-s 1003-gear-r
-empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
+#X obj 10 31 ggee/image ./ui-images/gear.png 0 1 32 32 1003-gear-s
+1003-gear-r empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 10 71 s \$0-gear-s;
 #X obj 10 5 r \$0-gear-r;
 #X msg 91 199 \; pd-options vis \$1;
@@ -1304,8 +1304,8 @@ empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X msg 43 236 1;
 #X msg 13 236 0;
 #X obj 13 213 del 1000;
-#X obj 61 13 ggee/image spacestore.gif 0 1 128 128 empty empty empty
-128 128 1 0 10 #000000 0 -8 64 64 0 1 1;
+#X obj 61 13 ggee/image ./ui-images/spacestore.gif 0 1 128 128 empty
+empty empty 128 128 1 0 10 #000000 0 -8 64 64 0 1 1;
 #X text 97 261 Prevents shop from repeatedly opening and closing
 ;
 #X text 80 154 Opens shop when double-clicked;
