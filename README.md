@@ -1,2 +1,2 @@
 # DEMOSCENE SEQUENCING LOOPER (DSL Tracker)
-A music/chiptune tracker built in Purr-Data/PDL2Ork.
+An networked music/chiptune tracker currently being developed in Purr-Data/PDL2Ork for collaboration over distance. 
