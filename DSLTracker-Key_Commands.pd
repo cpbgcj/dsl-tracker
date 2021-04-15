@@ -1,0 +1,59 @@
+#N canvas 593 23 489 417 12;
+#X obj 135 11 key;
+#X msg 197 159 commit;
+#X obj 135 36 sel 32 96;
+#X text 212 23 press space to toggle editingpress ~ key to commit
+current value;
+#X obj 135 209 gate 5;
+#X obj 105 131 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 36 319 print 1;
+#X obj 101 319 print 2;
+#X obj 161 320 print 3;
+#X obj 222 320 print 4;
+#X obj 283 321 print 5;
+#X msg 36 159 focus 1;
+#X obj 135 70 t b b;
+#X obj 106 159 counter 0 5;
+#X obj 207 187 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 36 293 nbx 3 22 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 123 256 3 0;
+#X obj 101 293 nbx 2 22 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256 3 0;
+#X obj 163 294 nbx 3 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 234 256 3 0;
+#X obj 217 294 nbx 4 21 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 45 256 3 0;
+#X obj 283 294 nbx 3 25 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 432 256 3 0;
+#X floatatom 283 258 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 219 258 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 164 258 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 103 258 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 38 258 5 0 0 0 - - - 0 0, f 5;
+#X connect 0 0 2 0;
+#X connect 1 0 4 1;
+#X connect 1 0 14 0;
+#X connect 2 0 12 0;
+#X connect 2 1 1 0;
+#X connect 4 0 24 0;
+#X connect 4 1 23 0;
+#X connect 4 2 22 0;
+#X connect 4 3 21 0;
+#X connect 4 4 20 0;
+#X connect 5 0 13 0;
+#X connect 11 0 4 1;
+#X connect 12 0 11 0;
+#X connect 12 1 5 0;
+#X connect 13 0 4 0;
+#X connect 15 0 6 0;
+#X connect 16 0 7 0;
+#X connect 17 0 8 0;
+#X connect 18 0 9 0;
+#X connect 19 0 10 0;
+#X connect 20 0 19 0;
+#X connect 21 0 18 0;
+#X connect 22 0 17 0;
+#X connect 23 0 16 0;
+#X connect 24 0 15 0;
