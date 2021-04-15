@@ -7,7 +7,7 @@
 #X obj 39 87 s \$0-powerofficon-s;
 #X obj -1 -1 ggee/image ui-images/neonshiplicious.png 0 0 1970 526
 empty empty empty 1970 526 1 0 10 #000000 0 -8 544 145.5 0 1 1;
-#X symbolatom 19 250 7 0 0 2 - #0-numdisp null 0, f 7;
+#X symbolatom 19 250 7 0 0 2 - #0-numdisp null 0 0, f 7;
 #X obj 129 251 bng 15 250 50 0 \$0-openfullchat \$0-openfullchat-r
 Open\ Chat -20 -9 0 10 #0080c0 #0000a0 #ffffff;
 #N canvas 606 592 1175 544 logic-systems 0;
@@ -51,7 +51,7 @@ also addresses weird timing issues during init if the spam is allowed.
 #X msg 343 443 disconnect;
 #X obj 29 273 s \$0-disconnect;
 #X obj 343 170 t b b;
-#X symbolatom 457 261 18 0 0 0 - - - 0, f 18;
+#X symbolatom 457 261 18 0 0 0 - - - 0 0, f 18;
 #X obj 370 196 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 343 144 gate 1 0;
@@ -148,15 +148,15 @@ f 32;
 #X obj 1074 16 loadbang;
 #X obj 978 95 tosymbol;
 #X msg 1074 69 separator _;
-#X symbolatom 978 120 0 0 0 0 - - - 0;
+#X symbolatom 978 120 0 0 0 0 - - - 0 0;
 #X obj 978 50 s2l;
 #X text 976 145 Replace spaces with _ for usernames \; (No longer
 needed);
 #X msg 19 258 Type Your Username Here, f 32;
 #X obj 313 101 route;
-#X symbolatom 340 175 30 0 0 0 - - - 0, f 30;
+#X symbolatom 340 175 30 0 0 0 - - - 0 0, f 30;
 #X obj 593 98 route;
-#X symbolatom 620 172 30 0 0 0 - - - 0, f 30;
+#X symbolatom 620 172 30 0 0 0 - - - 0 0, f 30;
 #X obj 582 139 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 596 22 loadbang;
@@ -210,13 +210,13 @@ you are connected to a server., f 32;
 #X text 24 10 Default Messages;
 #X text 866 329 Like / +1 system;
 #X obj 352 340 tosymbol;
-#X symbolatom 352 364 50 0 0 0 - - - 0, f 50;
+#X symbolatom 352 364 50 0 0 0 - - - 0 0, f 50;
 #X obj 551 645 text delete chat-history;
 #X obj 551 593 loadbang;
 #X msg 551 618 -1;
 #X obj 555 440 r \$0-tohistory;
 #X obj 468 259 tosymbol;
-#X symbolatom 468 283 50 0 0 0 - - - 0, f 50;
+#X symbolatom 468 283 50 0 0 0 - - - 0 0, f 50;
 #X msg 620 207 set \$1;
 #X obj 552 514 r \$0-openfullchat;
 #X msg 552 539 click;
@@ -295,8 +295,8 @@ you are connected to a server., f 32;
 #X restore 15 15 pd chat-logic;
 #N canvas 888 842 566 432 client 0;
 #X obj 16 90 netclient;
-#X floatatom 83 116 5 0 0 0 - - - 0, f 5;
-#X floatatom 16 221 5 0 0 0 - - - 0, f 5;
+#X floatatom 83 116 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 16 221 5 0 0 0 - - - 0 0, f 5;
 #X obj 62 211 print list;
 #X obj 16 170 route float list;
 #X obj 297 335 tosymbol;
@@ -348,7 +348,7 @@ you are connected to a server., f 32;
 #X obj 892 37 r \$0-authproc;
 #X obj 940 126 r \$0-authok;
 #X msg 908 384 send connect \$1;
-#X symbolatom 953 256 10 0 0 0 - - - 0, f 10;
+#X symbolatom 953 256 10 0 0 0 - - - 0 0, f 10;
 #X obj 856 183 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 908 355 gate 1 0;
@@ -429,7 +429,7 @@ you are connected to a server., f 32;
 #X obj 373 358 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 373 385 s \$0-likeallow;
-#X floatatom 342 265 5 0 0 0 - - - 0, f 5;
+#X floatatom 342 265 5 0 0 0 - - - 0 0, f 5;
 #X obj 342 306 s \$0-numlikes;
 #X obj 342 215 loadbang;
 #X msg 342 237 0;
@@ -468,12 +468,12 @@ you are connected to a server., f 32;
 #X restore 15 65 pd client;
 #N canvas 55 499 1676 769 points-system 0;
 #X obj 122 102 + 1;
-#X floatatom 122 76 5 0 0 0 - - - 0, f 5;
-#X floatatom 352 43 5 0 0 0 - - - 0, f 5;
+#X floatatom 122 76 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 352 43 5 0 0 0 - - - 0 0, f 5;
 #X msg 352 70 set \$1;
 #X obj 122 102 + 1;
-#X floatatom 122 76 5 0 0 0 - - - 0, f 5;
-#X floatatom 352 43 5 0 0 0 - - - 0, f 5;
+#X floatatom 122 76 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 352 43 5 0 0 0 - - - 0 0, f 5;
 #X msg 352 70 set \$1;
 #X obj 122 48 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -484,8 +484,8 @@ you are connected to a server., f 32;
 #X obj 122 125 s \$0-numpoints;
 #X obj 26 47 r \$0-setpoint;
 #X obj 41 250 + 1;
-#X floatatom 41 224 5 0 0 0 - - - 0, f 5;
-#X floatatom 41 224 5 0 0 0 - - - 0, f 5;
+#X floatatom 41 224 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 41 224 5 0 0 0 - - - 0 0, f 5;
 #X obj 41 273 s \$0-numpoints;
 #X obj 41 195 r \$0-setpoint;
 #X text 158 47 Point incrementing \; +1 point per like;
@@ -503,7 +503,7 @@ you are connected to a server., f 32;
 #000000 #000000;
 #X obj 558 206 text search itemcosts 0;
 #X obj 558 272 text get itemcosts 1;
-#X floatatom 558 318 5 0 0 0 - - - 0, f 5;
+#X floatatom 558 318 5 0 0 0 - - - 0 0, f 5;
 #X msg 748 87 symbol randomtext;
 #X msg 981 87 symbol announcement;
 #X msg 585 249 1;
@@ -513,19 +513,19 @@ you are connected to a server., f 32;
 #X obj 558 183 r \$0-cost;
 #X obj 748 178 s \$0-cost;
 #X obj 366 179 r \$0-spend;
-#X floatatom 351 155 5 0 0 0 - - - 0, f 5;
-#X floatatom 351 155 5 0 0 0 - - - 0, f 5;
+#X floatatom 351 155 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 351 155 5 0 0 0 - - - 0 0, f 5;
 #X obj 351 129 r \$0-setpoint;
 #X obj 332 196 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X floatatom 351 262 5 0 0 0 - - - 0, f 5;
+#X floatatom 351 262 5 0 0 0 - - - 0 0, f 5;
 #X obj 322 339 -;
 #X obj 366 285 r \$0-spend;
 #X obj 351 308 *;
 #X obj 322 361 s \$0-numpoints;
 #X obj 351 239 >=;
-#X floatatom 257 307 5 0 0 0 - - - 0, f 5;
-#X floatatom 257 307 5 0 0 0 - - - 0, f 5;
+#X floatatom 257 307 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 257 307 5 0 0 0 - - - 0 0, f 5;
 #X obj 257 281 r \$0-setpoint;
 #X obj 308 307 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
@@ -589,7 +589,7 @@ you are connected to a server., f 32;
 #X obj 288 18 loadbang;
 #X msg 288 43 0;
 #X obj 439 179 loadbang;
-#X floatatom 1541 115 5 0 0 0 - - - 0, f 5;
+#X floatatom 1541 115 5 0 0 0 - - - 0 0, f 5;
 #X msg 1448 138 symbol censor;
 #X obj 1541 140 t b f;
 #X msg 1002 187 symbol censor;
@@ -599,36 +599,36 @@ you are connected to a server., f 32;
 #X msg 815 185 symbol randomtext;
 #X msg 1541 90 set \$1;
 #X obj 1537 480 t b f;
-#X floatatom 1537 456 5 0 0 0 - - - 0, f 5;
+#X floatatom 1537 456 5 0 0 0 - - - 0 0, f 5;
 #X msg 1537 431 set \$1;
 #X obj 1318 378 r \$0-allowbuy;
 #X obj 1318 399 == 0;
 #X text 1349 399 Invert gate;
 #X obj 1318 472 t b f;
-#X floatatom 1318 448 5 0 0 0 - - - 0, f 5;
+#X floatatom 1318 448 5 0 0 0 - - - 0 0, f 5;
 #X msg 1318 423 set \$1;
 #X obj 1098 378 r \$0-allowbuy;
 #X obj 1098 399 == 0;
 #X text 1129 399 Invert gate;
 #X obj 1098 472 t b f;
-#X floatatom 1098 448 5 0 0 0 - - - 0, f 5;
+#X floatatom 1098 448 5 0 0 0 - - - 0 0, f 5;
 #X msg 1098 423 set \$1;
 #X obj 928 378 r \$0-allowbuy;
 #X obj 928 399 == 0;
 #X text 959 399 Invert gate;
 #X obj 928 472 t b f;
-#X floatatom 928 448 5 0 0 0 - - - 0, f 5;
+#X floatatom 928 448 5 0 0 0 - - - 0 0, f 5;
 #X msg 928 423 set \$1;
 #X obj 1331 90 r \$0-allowbuy;
-#X floatatom 1331 143 5 0 0 0 - - - 0, f 5;
+#X floatatom 1331 143 5 0 0 0 - - - 0 0, f 5;
 #X obj 1331 168 t b f;
 #X msg 1331 118 set \$1;
 #X obj 1131 110 r \$0-allowbuy;
-#X floatatom 1131 163 5 0 0 0 - - - 0, f 5;
+#X floatatom 1131 163 5 0 0 0 - - - 0 0, f 5;
 #X obj 1131 188 t b f;
 #X msg 1131 138 set \$1;
 #X obj 931 110 r \$0-allowbuy;
-#X floatatom 931 163 5 0 0 0 - - - 0, f 5;
+#X floatatom 931 163 5 0 0 0 - - - 0 0, f 5;
 #X obj 931 188 t b f;
 #X msg 931 138 set \$1;
 #X obj 366 201 t b f;
@@ -854,7 +854,7 @@ you are connected to a server., f 32;
 #000000 #000000;
 #X obj 1531 280 del 10;
 #X msg 1376 292 set \$1;
-#X floatatom 1376 252 5 0 0 0 - - - 0, f 5;
+#X floatatom 1376 252 5 0 0 0 - - - 0 0, f 5;
 #X obj 1336 212 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X msg 1336 192 1;
@@ -950,7 +950,7 @@ you are connected to a server., f 32;
 #X restore 15 116 pd hud-settings;
 #X obj 19 147 ggee/image ./ui-images/pixeljams.gif 0 0 32 32 empty
 empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
-#N canvas 92 478 1519 771 audio-engine 0;
+#N canvas 717 296 1519 767 audio-engine 0;
 #X obj 124 428 cnv 15 8 8 empty empty Select\ Channel 24 6 0 10 #ffffff
 #00ffff 0;
 #X obj 30 17 r \$0-instruments;
@@ -959,7 +959,7 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 334 324 s \$0-instr1notes;
 #X obj 230 324 s \$0-instr1nd-r;
 #X obj 395 18 tosymbol;
-#X symbolatom 395 43 31 0 0 0 - - - 0, f 31;
+#X symbolatom 395 43 31 0 0 0 - - - 0 0, f 31;
 #X obj 9 390 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
 1 1;
 #X text 29 389 Channel 1;
@@ -1037,13 +1037,6 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 1106 96 sel 0 1 2 3 4 5;
 #X obj 1229 50 loadbang;
 #X msg 1229 71 0;
-#X text 1105 444 \$1 - instr note send   \;   \$2 - write to wavetable receive name  
-\;   \$3 - write to envelope receive name   \;   \$4 - note duration recieve  
-\;   \$5 - wavetable server channel   \;   \$6 - envelope server channel  
-\;   \$7 - note duration server channel   \;   \$8 - note channel  
-\;   \$9 - %instr#%   \,     instrument specific server channel  
-\;   \$10 - \$0-toserver   \;   \$11 - fx channel  
-\;    \$12 - \$0-tick   \;  ;
 #X obj 441 324 s \$0-instr1fx;
 #X text 1105 397 wavetablesynth \$0-instr1notes \$0-writei1wt \$0-writei1env \$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes% %instr1% \$0-toserver \$0-instr1fx \$0-tick
 ;
@@ -1064,7 +1057,7 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 616 184 s \$0-instr4fx;
 #X obj 676 138 s \$0-instr5fx;
 #X obj 734 94 s \$0-instr6fx;
-#N canvas 1609 787 450 300 tickmaster 0;
+#N canvas 1951 785 450 300 tickmaster 0;
 #X obj 26 136 s \$0-tick;
 #X obj 26 25 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -1077,7 +1070,7 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X connect 4 0 3 0;
 #X restore 892 70 pd tickmaster;
 #X obj 848 263 s \$0-instr1nd-r;
-#X floatatom 841 221 5 0 0 0 - - - 0, f 5;
+#X floatatom 841 221 5 0 0 0 - - - 0 0, f 5;
 #X obj 9 457 ./pd-dependencies/wavetablesynth \$0-instr1notes \$0-writei1wt
 \$0-writei1env \$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes%
 %instr1% \$0-toserver \$0-instr1fx \$0-tick;
@@ -1096,23 +1089,26 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 908 457 ./pd-dependencies/wavetablesynth \$0-instr6notes \$0-writei6wt
 \$0-writei6env \$0-instr6nd-r %instr6wt% %instr6env% %instr6nd% %instr6notes%
 %instr6% \$0-toserver \$0-instr6fx \$0-tick;
+#X text 1105 444 \$1 - instr note send\$2 - write to wavetable receive name\$3 - write to envelope receive name\$4 - note duration recieve\$5 - wavetable server channel\$6 - envelope server channel\$7 - note duration server channel\$8 - note channel\$9 - %instr#%
+\, instrument specific server channel\$10 - \$0-toserver\$11 - fx channel\$12 - \$0-tick
+;
 #X connect 1 0 6 0;
 #X connect 1 0 11 0;
 #X connect 6 0 7 0;
-#X connect 8 0 89 0;
+#X connect 8 0 88 0;
 #X connect 10 0 8 0;
-#X connect 11 0 75 0;
-#X connect 11 1 76 0;
-#X connect 11 2 77 0;
-#X connect 11 3 78 0;
-#X connect 11 4 79 0;
-#X connect 11 5 80 0;
-#X connect 12 0 90 0;
+#X connect 11 0 74 0;
+#X connect 11 1 75 0;
+#X connect 11 2 76 0;
+#X connect 11 3 77 0;
+#X connect 11 4 78 0;
+#X connect 11 5 79 0;
+#X connect 12 0 89 0;
 #X connect 14 0 12 0;
-#X connect 35 0 91 0;
-#X connect 36 0 92 0;
-#X connect 37 0 93 0;
-#X connect 38 0 94 0;
+#X connect 35 0 90 0;
+#X connect 36 0 91 0;
+#X connect 37 0 92 0;
+#X connect 38 0 93 0;
 #X connect 43 0 38 0;
 #X connect 44 0 37 0;
 #X connect 45 0 36 0;
@@ -1168,37 +1164,37 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X connect 69 5 68 0;
 #X connect 70 0 71 0;
 #X connect 71 0 69 0;
-#X connect 75 0 2 0;
-#X connect 75 1 3 0;
-#X connect 75 2 5 0;
-#X connect 75 3 4 0;
-#X connect 75 4 73 0;
-#X connect 76 0 15 0;
-#X connect 76 1 16 0;
-#X connect 76 2 17 0;
-#X connect 76 3 18 0;
+#X connect 74 0 2 0;
+#X connect 74 1 3 0;
+#X connect 74 2 5 0;
+#X connect 74 3 4 0;
+#X connect 74 4 72 0;
+#X connect 75 0 15 0;
+#X connect 75 1 16 0;
+#X connect 75 2 17 0;
+#X connect 75 3 18 0;
+#X connect 75 4 80 0;
+#X connect 76 0 19 0;
+#X connect 76 1 20 0;
+#X connect 76 2 21 0;
+#X connect 76 3 22 0;
 #X connect 76 4 81 0;
-#X connect 77 0 19 0;
-#X connect 77 1 20 0;
-#X connect 77 2 21 0;
-#X connect 77 3 22 0;
+#X connect 77 0 23 0;
+#X connect 77 1 24 0;
+#X connect 77 2 25 0;
+#X connect 77 3 26 0;
 #X connect 77 4 82 0;
-#X connect 78 0 23 0;
-#X connect 78 1 24 0;
-#X connect 78 2 25 0;
-#X connect 78 3 26 0;
+#X connect 78 0 27 0;
+#X connect 78 1 28 0;
+#X connect 78 2 29 0;
+#X connect 78 3 30 0;
 #X connect 78 4 83 0;
-#X connect 79 0 27 0;
-#X connect 79 1 28 0;
-#X connect 79 2 29 0;
-#X connect 79 3 30 0;
+#X connect 79 0 31 0;
+#X connect 79 1 32 0;
+#X connect 79 2 33 0;
+#X connect 79 3 34 0;
 #X connect 79 4 84 0;
-#X connect 80 0 31 0;
-#X connect 80 1 32 0;
-#X connect 80 2 33 0;
-#X connect 80 3 34 0;
-#X connect 80 4 85 0;
-#X connect 88 0 87 0;
+#X connect 87 0 86 0;
 #X coords 0 -1 1 1 1079 334 2 5 413;
 #X restore 15 141 pd audio-engine;
 #N canvas 1048 615 464 558 storefront 0;
@@ -1220,7 +1216,7 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 55 17 0 10 #e0e0e0 #ffffff 0;
 #X obj 20 58 cnv 15 8 8 empty empty 5p\ -\ Replace\ some\ words\ in\ the\ next\ 4\ messages\ randomly
 22 6 0 10 #e0e0e0 #ffffff 0;
-#X floatatom 267 15 5 0 0 0 - #0-setpoint null-setpoint 0, f 5;
+#X floatatom 267 15 5 0 0 0 - #0-setpoint null-setpoint 0 0, f 5;
 #X obj 20 58 bng 15 250 50 0 \$0-selrt \$0-rtbng empty 17 7 0 10 #28f4f4
 #000000 #000000;
 #X obj 20 117 bng 15 250 50 0 \$0-selan \$0-anbng empty 17 7 0 10 #28f4f4
@@ -1254,12 +1250,12 @@ empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 1 1;
 0;
 #X obj 19 165 cnv 15 8 8 empty empty Chat -3 -11 0 14 #e0e0e0 #ffffff
 0;
-#X symbolatom 19 218 115 0 0 2 - #0-tochat null 0, f 115;
-#X symbolatom 19 165 115 0 0 2 - #0-chat-r #0-chat-s 1, f 115;
+#X symbolatom 19 218 115 0 0 2 - #0-tochat null 0 0, f 115;
+#X symbolatom 19 165 115 0 0 2 - #0-chat-r #0-chat-s 1 0, f 115;
 #X obj 15 35 cnv 15 8 8 empty empty Hostname -3 -11 0 14 #e0e0e0 #ffffff
 0;
-#X symbolatom 19 128 115 0 0 2 - #0-username-r #0-username 1, f 115
-;
+#X symbolatom 19 128 115 0 0 2 - #0-username-r #0-username 1 0, f
+115;
 #N canvas 45 350 441 244 gear 0;
 #X obj 10 31 ggee/image ./ui-images/gear.png 0 1 32 32 1003-gear-s
 1003-gear-r empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
@@ -1322,8 +1318,8 @@ empty empty 128 128 1 0 10 #000000 0 -8 64 64 0 1 1;
 #X connect 7 0 0 0;
 #X coords 0 -1 1 1 128 128 2 61 13;
 #X restore 16 384 pd shop-icon;
-#X symbolatom 15 35 37 0 0 2 - #0-hostname-r #0-hostname-s 0, f 37
-;
+#X symbolatom 15 35 37 0 0 2 - #0-hostname-r #0-hostname-s 0 0, f
+37;
 #X connect 0 0 10 0;
 #X connect 2 0 11 0;
 #X connect 3 0 12 0;

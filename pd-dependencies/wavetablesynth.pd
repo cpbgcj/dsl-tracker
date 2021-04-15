@@ -1,4 +1,4 @@
-#N canvas 111 696 1411 546 10;
+#N canvas 7 788 1411 546 10;
 #X obj 830 307 cnv 15 8 8 empty empty Typing\ Notes 43 6 0 10 #ffffff
 #00ffff 0;
 #X obj 830 287 cnv 15 8 8 empty empty Confirm\ Changes 43 6 0 10 #ffffff
@@ -7,10 +7,10 @@
 0;
 #X obj 830 246 cnv 15 8 8 empty empty Note\ Duration\ (ms) 43 6 0 10
 #ffffff #00ffff 0;
-#X obj 830 147 ggee/image ./ui-images/starry-background.png 0 0 158 89 empty empty
-empty 158 89 0 0 10 #000000 0 -8 544 145.5 0 1 1;
-#X obj 830 51 ggee/image ./ui-images/starry-background.png 0 0 158 89 empty empty
-empty 158 89 0 0 10 #000000 0 -8 544 145.5 0 1 1;
+#X obj 830 147 ggee/image ./ui-images/starry-background.png 0 0 158
+89 empty empty empty 158 89 0 0 10 #000000 0 -8 544 145.5 0 1 1;
+#X obj 830 51 ggee/image ./ui-images/starry-background.png 0 0 158
+89 empty empty empty 158 89 0 0 10 #000000 0 -8 544 145.5 0 1 1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-instr-wt 64 float 16 black #ffc584;
 #X coords 0 1 63 -1 158 89 1;
@@ -22,12 +22,12 @@ empty 158 89 0 0 10 #000000 0 -8 544 145.5 0 1 1;
 #X obj 298 258 hip~ 5;
 #X obj 298 290 dac~;
 #X obj 298 92 phasor~;
-#X floatatom 298 71 5 0 0 0 - - - 0, f 5;
-#X floatatom 12 167 5 0 0 0 - - - 0, f 5;
+#X floatatom 298 71 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 12 167 5 0 0 0 - - - 0 0, f 5;
 #X msg 39 118 1;
 #X obj 12 96 t f b;
 #X obj 57 4 key;
-#X floatatom 12 55 5 0 0 0 - - - 0, f 5;
+#X floatatom 12 55 5 0 0 0 - - - 0 0, f 5;
 #X obj 12 75 text search midi-shortcuts 0;
 #X obj 12 141 text get midi-shortcuts 1;
 #X text 86 4 Convert key press to midi note;
@@ -38,10 +38,10 @@ empty 158 89 0 0 10 #000000 0 -8 544 145.5 0 1 1;
 #X obj 483 47 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X obj 93 190 * 12;
-#X floatatom 93 215 5 0 0 0 - - - 0, f 5;
+#X floatatom 93 215 5 0 0 0 - - - 0 0, f 5;
 #X obj 12 191 +;
 #X obj 13 334 snapshot~;
-#X floatatom 13 357 15 0 0 0 - - - 0, f 15;
+#X floatatom 13 357 15 0 0 0 - - - 0 0, f 15;
 #X obj 13 283 metro 100;
 #X obj 13 308 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -53,17 +53,17 @@ empty 158 89 0 0 10 #000000 0 -8 544 145.5 0 1 1;
 #X msg 483 115 0 \, 256 \$1;
 #X obj 298 133 *~ 64;
 #X obj 355 92 r wt-size;
-#X floatatom 355 117 5 0 0 0 - - - 0, f 5;
-#X floatatom 830 246 5 0 0 0 - #4 #0-note-dur 0, f 5;
+#X floatatom 355 117 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 830 246 5 0 0 0 - #4 #0-note-dur 0 0, f 5;
 #X obj 417 92 loadbang;
 #X msg 417 117 64;
 #X text 342 259 HPF to get rid of any low artifacts;
-#X floatatom 830 266 5 -5 5 0 - r-null #0-octave 0, f 5;
+#X floatatom 830 266 5 -5 5 0 - r-null #0-octave 0 0, f 5;
 #X text 12 378 Shows number output every 100ms \; activate toggle
 for debugging;
 #X obj 12 33 gate 1 0;
 #X obj 75 33 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
-0 1;
+1 1;
 #X obj 12 5 inlet;
 #X obj 830 287 bng 15 250 50 0 \$0-instrupdate r-null empty 17 7 0
 10 #fcfcfc #000000 #000000;
@@ -88,7 +88,7 @@ for debugging;
 #X msg 149 86 64;
 #X obj 10 343 list prepend send;
 #X obj 80 368 tosymbol;
-#X symbolatom 80 393 45 0 0 1 - - - 8.58927e+08, f 45;
+#X symbolatom 80 393 45 0 0 1 - - - 8.58927e+08 0, f 45;
 #X obj 38 85 t b b b b;
 #X text 152 268 sends to specific server channel:;
 #X text 152 281 instrument# wavetable/env;
@@ -106,7 +106,7 @@ for debugging;
 #X obj 519 61 loadbang;
 #X obj 380 343 list prepend send;
 #X obj 450 368 tosymbol;
-#X symbolatom 450 393 45 0 0 1 - - - 8.58927e+08, f 45;
+#X symbolatom 450 393 45 0 0 1 - - - 8.58927e+08 0, f 45;
 #X obj 408 85 t b b b b;
 #X text 525 268 sends to specific server channel:;
 #X text 525 281 instrument# wavetable/env;
@@ -143,11 +143,11 @@ for debugging;
 #X obj 380 293 list prepend \$9;
 #X obj 425 114 256;
 #X obj 848 209 tosymbol;
-#X symbolatom 848 234 45 0 0 1 - - - 8.58927e+08, f 45;
+#X symbolatom 848 234 45 0 0 1 - - - 8.58927e+08 0, f 45;
 #X obj 783 159 list prepend %instruments%;
 #X obj 783 136 list prepend \$9;
 #X msg 783 63 set \$1;
-#X floatatom 783 88 5 0 0 0 - - - 0, f 5;
+#X floatatom 783 88 5 0 0 0 - - - 0 0, f 5;
 #X obj 868 63 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X obj 868 38 r \$0-instrupdate;
@@ -227,26 +227,25 @@ for debugging;
 #X obj 12 235 s \$0-notetoserver;
 #X obj 644 286 r \$0-notetoserver;
 #X obj 707 411 tosymbol;
-#X symbolatom 707 436 46 0 0 0 - - - 0, f 46;
+#X symbolatom 707 436 46 0 0 0 - - - 0 0, f 46;
 #X obj 644 336 list prepend \$9;
 #X obj 644 361 list prepend %instruments%;
 #X obj 75 53 s \$0-midion;
 #X obj 830 307 tgl 15 0 s-null \$0-midion empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X obj 827 302 ggee/image ./ui-images/transparent.png 0 1 25 25 empty empty empty
-25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
+#000000 1 1;
+#X obj 827 302 ggee/image ./ui-images/transparent.png 0 1 25 25 empty
+empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X obj 273 6 cnv 15 8 8 empty empty Canvas 24 6 0 10 #ffffff #00ffff
 0;
 #X obj 93 167 r \$0-octave;
-#N canvas 745 815 1050 389 tracker-fx 1;
-#X obj 216 15 inlet;
-#X obj 85 355 outlet;
-#X obj 216 80 route 0 1 2 3 4 5 6 7 8 9 A B C D E F X Z, f 95;
-#X text 255 66 Route FX Messages - Z is no FX, f 35;
-#N canvas 581 633 450 396 0xy-arp 0;
+#N canvas 600 321 1050 406 tracker-fx 0;
+#X obj 146 15 inlet;
+#X obj 115 335 outlet;
+#X obj 146 80 route 0 1 2 3 4 5 6 7 8 9 A B C D E F X Z, f 95;
+#X text 185 66 Route FX Messages - Z is no FX, f 35;
+#N canvas 1017 774 450 406 0xy-arp 0;
 #X obj 119 10 inlet;
-#X obj 44 365 outlet;
-#X obj 59 10 inlet;
+#X obj 44 375 outlet;
 #X obj 17 101 r \$12;
 #X text 51 102 Tick recieve, f 13;
 #X obj 164 38 list split 1;
@@ -280,7 +279,7 @@ for debugging;
 #X connect 6 0 8 0;
 #X connect 7 0 8 0;
 #X connect 10 0 1 0;
-#X restore 164 70 pd hex-to-int;
+#X restore 164 60 pd hex-to-int;
 #N canvas 575 99 441 159 hex-to-int 0;
 #X obj 17 14 inlet;
 #X obj 17 69 route A B C D E F, f 33;
@@ -309,131 +308,169 @@ for debugging;
 #X connect 6 0 8 0;
 #X connect 7 0 8 0;
 #X connect 10 0 1 0;
-#X restore 254 70 pd hex-to-int;
-#X floatatom 164 191 5 0 0 0 - - - 0, f 5;
-#X floatatom 254 191 5 0 0 0 - - - 0, f 5;
+#X restore 254 60 pd hex-to-int;
+#X floatatom 164 191 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 254 191 5 0 0 0 - - - 0 0, f 5;
 #X obj 44 323 switch 3;
-#X floatatom 117 367 5 0 0 0 - - - 0, f 5;
-#X floatatom 59 191 5 0 0 0 - - - 0, f 5;
+#X floatatom 190 357 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 59 191 5 0 0 0 - - - 0 0, f 5;
 #X obj 17 75 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X text 37 75 Debug Bang, f 13;
-#X floatatom 44 252 5 0 0 0 - - - 0, f 5;
+#X floatatom 44 252 5 0 0 0 - - - 0 0, f 5;
 #X obj 44 227 count 3;
-#X floatatom 304 302 5 0 0 0 - - - 0, f 5;
+#X floatatom 304 302 5 0 0 0 - - - 0 0, f 5;
 #X obj 304 277 count 3;
 #X obj 331 219 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 160 351 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 190 340 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 17 126 t b b;
 #X obj 44 276 + 1;
 #X msg 359 218 reset;
 #X msg 94 210 reset;
-#X connect 0 0 5 0;
-#X connect 2 0 6 1;
-#X connect 2 0 7 1;
-#X connect 2 0 14 0;
-#X connect 2 0 26 0;
-#X connect 3 0 23 0;
-#X connect 5 0 8 0;
-#X connect 5 1 9 0;
+#X obj 59 10 r \$0-note;
+#X obj 44 348 mtof;
+#X floatatom 190 375 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 164 108 5 0 0 0 - - - 0 0, f 5;
+#X floatatom 254 108 5 0 0 0 - - - 0 0, f 5;
+#X obj 59 35 t b f;
+#X connect 0 0 4 0;
+#X connect 2 0 22 0;
+#X connect 4 0 7 0;
+#X connect 4 1 8 0;
+#X connect 5 0 9 0;
 #X connect 6 0 10 0;
-#X connect 7 0 11 0;
-#X connect 8 0 6 0;
-#X connect 9 0 7 0;
-#X connect 10 0 12 2;
-#X connect 11 0 12 3;
-#X connect 12 0 1 0;
-#X connect 12 0 13 0;
-#X connect 12 0 22 0;
-#X connect 14 0 12 1;
-#X connect 15 0 23 0;
-#X connect 17 0 24 0;
-#X connect 18 0 17 0;
-#X connect 20 0 19 0;
-#X connect 21 0 20 0;
-#X connect 23 0 14 0;
-#X connect 23 0 11 0;
-#X connect 23 0 10 0;
-#X connect 23 1 18 0;
-#X connect 24 0 12 0;
-#X connect 25 0 20 0;
-#X connect 26 0 18 0;
-#X restore 159 135 pd 0xy-arp;
-#X obj 106 15 inlet;
-#X obj 10 97 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 751 109 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 751 132 s \$0-zfx;
-#X obj 58 133 r \$0-zfx;
-#X msg 37 228 0;
-#X msg 85 228 1;
-#X obj 85 280 gate;
-#X obj 159 160 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 95 305 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 85 325 mtof;
-#X floatatom 106 250 5 0 0 0 - - - 0, f 5;
-#X obj 58 162 t b b;
-#X obj 10 162 t b b;
-#X text 118 280 GLITCH: Waits 1 note to close (ex: press 37 then 64 example - 64 is not supposed to play b/c 0xy-arp is not connected but does the first time anyway)
-, f 65;
-#X connect 0 0 2 0;
-#X connect 2 0 4 1;
-#X connect 2 0 6 0;
-#X connect 2 1 6 0;
-#X connect 2 2 6 0;
-#X connect 2 3 6 0;
-#X connect 2 4 6 0;
-#X connect 2 5 6 0;
-#X connect 2 6 6 0;
-#X connect 2 7 6 0;
-#X connect 2 8 6 0;
-#X connect 2 9 6 0;
-#X connect 2 10 6 0;
-#X connect 2 11 6 0;
-#X connect 2 12 6 0;
-#X connect 2 13 6 0;
-#X connect 2 14 6 0;
-#X connect 2 15 6 0;
-#X connect 2 16 6 0;
-#X connect 2 17 7 0;
-#X connect 4 0 13 0;
-#X connect 5 0 4 0;
-#X connect 5 0 16 0;
-#X connect 6 0 18 0;
-#X connect 7 0 8 0;
-#X connect 9 0 17 0;
-#X connect 10 0 12 0;
+#X connect 7 0 29 0;
+#X connect 8 0 30 0;
+#X connect 9 0 11 2;
+#X connect 10 0 11 3;
 #X connect 11 0 12 0;
-#X connect 12 0 15 0;
-#X connect 12 0 14 0;
-#X connect 15 0 1 0;
-#X connect 16 0 12 1;
+#X connect 11 0 21 0;
+#X connect 11 0 27 0;
+#X connect 13 0 11 1;
+#X connect 14 0 22 0;
+#X connect 16 0 23 0;
 #X connect 17 0 16 0;
-#X connect 17 1 11 0;
-#X connect 18 0 16 0;
-#X connect 18 1 10 0;
+#X connect 19 0 18 0;
+#X connect 20 0 19 0;
+#X connect 22 0 13 0;
+#X connect 22 0 10 0;
+#X connect 22 0 9 0;
+#X connect 22 1 17 0;
+#X connect 23 0 11 0;
+#X connect 24 0 19 0;
+#X connect 25 0 17 0;
+#X connect 26 0 13 0;
+#X connect 26 0 25 0;
+#X connect 26 0 31 0;
+#X connect 27 0 28 0;
+#X connect 27 0 1 0;
+#X connect 29 0 5 0;
+#X connect 30 0 6 0;
+#X connect 31 0 29 0;
+#X connect 31 0 30 0;
+#X connect 31 1 6 1;
+#X connect 31 1 5 1;
+#X restore 146 135 pd 0xy-arp;
+#X obj 36 15 inlet;
+#X obj 156 160 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 676 252 mtof;
+#X obj 115 282 switch 18, f 94;
+#X floatatom 115 307 5 0 0 0 - - - 0 0, f 5;
+#N canvas 575 99 441 159 hex-to-int 0;
+#X obj 17 14 inlet;
+#X obj 17 69 route A B C D E F, f 33;
+#X msg 17 94 10;
+#X msg 47 94 11;
+#X msg 77 94 12;
+#X msg 107 94 13;
+#X msg 137 94 14;
+#X msg 167 94 15;
+#X obj 17 129 outlet;
+#X text 224 68 Convert A B C D E F to numbers \,  normal numbers just pass through
+, f 34;
+#X obj 17 39 list trim;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X connect 1 4 6 0;
+#X connect 1 5 7 0;
+#X connect 1 6 8 0;
+#X connect 2 0 8 0;
+#X connect 3 0 8 0;
+#X connect 4 0 8 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 10 0 1 0;
+#X restore 36 107 pd hex-to-int;
+#X obj 36 136 route X Z;
+#X msg 36 165 16;
+#X msg 66 165 17;
+#X obj 36 195 + 1;
+#X floatatom 676 226 5 0 0 0 - - - 0 0, f 5;
+#X obj 36 40 s \$0-note;
+#X floatatom 115 250 5 0 0 0 - - - 0 0, f 5;
+#X obj 676 176 r \$0-note;
+#X msg 676 201 set \$1;
+#X obj 187 30 r \$12;
+#X text 188 13 Tick!;
+#X obj 36 80 list split 1;
+#X obj 36 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X msg 96 165 1;
+#X obj 36 282 s \$0-trnote;
+#X obj 723 201 r \$0-trnote;
+#X obj 36 215 t b f;
+#X connect 0 0 2 0;
+#X connect 0 0 22 0;
+#X connect 0 0 24 0;
+#X connect 2 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 0 8 1;
+#X connect 5 0 16 0;
+#X connect 7 0 8 18;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 11 2 14 0;
+#X connect 12 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 27 0;
+#X connect 15 0 7 0;
+#X connect 17 0 8 0;
+#X connect 18 0 19 0;
+#X connect 19 0 15 0;
+#X connect 22 0 10 0;
+#X connect 23 0 25 0;
+#X connect 24 0 14 1;
+#X connect 26 0 15 0;
+#X connect 27 0 23 0;
+#X connect 27 1 17 0;
 #X restore 244 438 pd tracker-fx;
-#X text 1005 51 \$1 - instr note send  \;   \$2 - write to wavetable receive name 
-\;  \$3 - write to envelope receive name  \;  \$4 - note duration recieve 
-\;  \$5 - wavetable server channel  \;  \$6 - envelope server channel 
-\;  \$7 - note duration server channel  \;  \$8 - note channel 
-\;  \$9 - %instr#%  \,   instrument specific server channel 
-\;  \$10 - \$0-toserver  \;  \$11 - fx server channel 
-\;  \$12 - tick  \;  ;
 #X msg 313 385 64;
-#X msg 343 385 0 C D;
-#X msg 393 385 37;
-#X msg 423 385 Z 0 0;
+#X msg 443 385 37;
+#X msg 473 385 Z 0 0;
 #X obj 313 354 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
+#X obj 443 354 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 522 386 s \$12;
+#X text 1005 51 \$1 - instr note send\$2 - write to wavetable receive name\$3 - write to envelope receive name\$4 - note duration recieve\$5 - wavetable server channel\$6 - envelope server channel\$7 - note duration server channel\$8 - note channel \$9 - %instr#%
+\, instrument specific server channel\$10 - \$0-toserver\$11 - fx server channel\$12 - tick
+;
+#X floatatom 508 47 5 0 0 0 - - - 0 0, f 5;
+#X text 508 31 Debug Note Duration;
+#X msg 343 385 0 3 7;
+#X msg 393 385 0 C D;
 #X obj 393 354 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 472 386 s \$12;
 #X connect 7 0 33 0;
 #X connect 11 0 12 1;
 #X connect 11 0 12 0;
@@ -484,14 +521,18 @@ for debugging;
 #X connect 72 0 25 0;
 #X connect 73 0 14 0;
 #X connect 73 0 24 0;
+#X connect 74 0 73 0;
 #X connect 75 0 73 0;
 #X connect 76 0 73 1;
-#X connect 77 0 73 0;
-#X connect 78 0 73 1;
-#X connect 79 0 75 0;
-#X connect 79 0 76 0;
-#X connect 79 0 81 0;
-#X connect 80 0 77 0;
-#X connect 80 0 78 0;
-#X connect 80 0 81 0;
+#X connect 77 0 74 0;
+#X connect 77 0 83 0;
+#X connect 77 0 79 0;
+#X connect 78 0 75 0;
+#X connect 78 0 76 0;
+#X connect 78 0 79 0;
+#X connect 81 0 35 1;
+#X connect 83 0 73 1;
+#X connect 84 0 73 1;
+#X connect 85 0 84 0;
+#X connect 85 0 75 0;
 #X coords 0 -1 1 1 169 283 2 825 45;
