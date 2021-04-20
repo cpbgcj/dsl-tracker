@@ -1,4 +1,4 @@
-#N canvas 50 253 1981 526 10;
+#N canvas 501 122 1981 526 10;
 #X obj 69 224 r \$0-hearticon-r;
 #X obj 69 273 s \$0-hearticon-s;
 #X obj 12 45 r \$0-poweronicon-r;
@@ -34,7 +34,6 @@ also addresses weird timing issues during init if the spam is allowed.
 #X obj 1092 111 tosymbol;
 #X obj 1092 174 s \$0-hostname-r;
 #X text 1093 47 default hostname setting;
-#X msg 887 243 1337;
 #X obj 29 131 keyname;
 #X obj 68 156 sel ShiftCtrlF12;
 #X obj 29 156 sel 1;
@@ -78,9 +77,10 @@ f 37;
 #X msg 1092 90 localhost;
 #X text 896 200 splits name into ip and port if specified,
 f 32;
+#X msg 887 243 3001;
 #X connect 1 0 10 0;
 #X connect 2 1 8 0;
-#X connect 2 2 31 0;
+#X connect 2 2 30 0;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
 #X connect 4 1 2 0;
@@ -90,47 +90,47 @@ f 32;
 #X connect 8 0 14 0;
 #X connect 9 0 13 0;
 #X connect 10 0 9 1;
-#X connect 11 0 50 0;
+#X connect 11 0 49 0;
 #X connect 12 1 15 1;
 #X connect 13 0 15 0;
 #X connect 13 1 12 0;
 #X connect 14 0 9 0;
-#X connect 14 1 20 0;
+#X connect 14 1 56 0;
 #X connect 15 0 11 0;
-#X connect 16 0 55 0;
+#X connect 16 0 54 0;
 #X connect 17 0 18 0;
-#X connect 20 0 12 0;
-#X connect 21 0 23 0;
-#X connect 21 1 22 0;
-#X connect 22 0 25 0;
-#X connect 22 1 26 0;
-#X connect 23 0 24 0;
-#X connect 24 0 27 0;
-#X connect 25 0 24 1;
-#X connect 26 0 24 1;
-#X connect 27 0 28 0;
-#X connect 28 0 34 0;
-#X connect 30 0 3 1;
-#X connect 32 0 38 1;
-#X connect 33 0 51 0;
-#X connect 35 0 33 0;
-#X connect 35 1 37 0;
-#X connect 36 0 43 1;
-#X connect 37 0 48 0;
-#X connect 38 0 35 0;
-#X connect 39 0 40 0;
-#X connect 40 0 38 0;
+#X connect 20 0 22 0;
+#X connect 20 1 21 0;
+#X connect 21 0 24 0;
+#X connect 21 1 25 0;
+#X connect 22 0 23 0;
+#X connect 23 0 26 0;
+#X connect 24 0 23 1;
+#X connect 25 0 23 1;
+#X connect 26 0 27 0;
+#X connect 27 0 33 0;
+#X connect 29 0 3 1;
+#X connect 31 0 37 1;
+#X connect 32 0 50 0;
+#X connect 34 0 32 0;
+#X connect 34 1 36 0;
+#X connect 35 0 42 1;
+#X connect 36 0 47 0;
+#X connect 37 0 34 0;
+#X connect 38 0 39 0;
+#X connect 39 0 37 0;
+#X connect 41 0 40 0;
 #X connect 42 0 41 0;
-#X connect 43 0 42 0;
-#X connect 44 0 47 0;
-#X connect 45 0 43 0;
-#X connect 46 0 45 0;
-#X connect 47 0 45 0;
-#X connect 48 0 36 0;
-#X connect 48 1 46 0;
-#X connect 48 1 44 0;
-#X connect 49 0 36 0;
-#X connect 55 0 17 0;
+#X connect 43 0 46 0;
+#X connect 44 0 42 0;
+#X connect 45 0 44 0;
+#X connect 46 0 44 0;
+#X connect 47 0 35 0;
+#X connect 47 1 45 0;
+#X connect 47 1 43 0;
+#X connect 48 0 35 0;
+#X connect 54 0 17 0;
+#X connect 56 0 12 0;
 #X restore 15 40 pd connect-logic;
 #N canvas 265 503 1211 790 chat-logic 0;
 #X obj 23 40 loadbang;
@@ -950,7 +950,7 @@ you are connected to a server., f 32;
 #X restore 15 116 pd hud-settings;
 #X obj 19 147 ggee/image ./ui-images/pixeljams.gif 0 0 32 32 empty
 empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
-#N canvas 717 296 1519 767 audio-engine 0;
+#N canvas 848 485 1519 767 audio-engine 0;
 #X obj 124 428 cnv 15 8 8 empty empty Select\ Channel 24 6 0 10 #ffffff
 #00ffff 0;
 #X obj 30 17 r \$0-instruments;
@@ -1057,45 +1057,53 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 616 184 s \$0-instr4fx;
 #X obj 676 138 s \$0-instr5fx;
 #X obj 734 94 s \$0-instr6fx;
-#N canvas 1951 785 450 300 tickmaster 0;
+#N canvas 706 356 450 300 tickmaster 0;
 #X obj 26 136 s \$0-tick;
 #X obj 26 25 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X text 45 24 Debug tick;
-#X obj 126 46 metro 150;
-#X obj 126 24 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 126 76 metro 150;
+#X obj 126 54 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
+#X floatatom 202 54 5 0 0 0 - - - 0 0, f 5;
+#X obj 202 7 loadbang;
+#X msg 202 32 150;
+#X obj 202 78 s \$0-tickms;
 #X connect 1 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
 #X restore 892 70 pd tickmaster;
 #X obj 848 263 s \$0-instr1nd-r;
 #X floatatom 841 221 5 0 0 0 - - - 0 0, f 5;
-#X obj 9 457 ./pd-dependencies/wavetablesynth \$0-instr1notes \$0-writei1wt
-\$0-writei1env \$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes%
-%instr1% \$0-toserver \$0-instr1fx \$0-tick;
-#X obj 189 457 ./pd-dependencies/wavetablesynth \$0-instr2notes \$0-writei2wt
-\$0-writei2env \$0-instr2nd-r %instr2wt% %instr2env% %instr2nd% %instr2notes%
-%instr2% \$0-toserver \$0-instr2fx \$0-tick;
-#X obj 369 457 ./pd-dependencies/wavetablesynth \$0-instr3notes \$0-writei3wt
-\$0-writei3env \$0-instr3nd-r %instr3wt% %instr3env% %instr3nd% %instr3notes%
-%instr3% \$0-toserver \$0-instr3fx \$0-tick;
-#X obj 549 457 ./pd-dependencies/wavetablesynth \$0-instr4notes \$0-writei4wt
-\$0-writei4env \$0-instr4nd-r %instr4wt% %instr4env% %instr4nd% %instr4notes%
-%instr4% \$0-toserver \$0-instr4fx \$0-tick;
-#X obj 729 457 ./pd-dependencies/wavetablesynth \$0-instr5notes \$0-writei5wt
-\$0-writei5env \$0-instr5nd-r %instr5wt% %instr5env% %instr5nd% %instr5notes%
-%instr5% \$0-toserver \$0-instr5fx \$0-tick;
-#X obj 908 457 ./pd-dependencies/wavetablesynth \$0-instr6notes \$0-writei6wt
-\$0-writei6env \$0-instr6nd-r %instr6wt% %instr6env% %instr6nd% %instr6notes%
-%instr6% \$0-toserver \$0-instr6fx \$0-tick;
 #X text 1105 444 \$1 - instr note send\$2 - write to wavetable receive name\$3 - write to envelope receive name\$4 - note duration recieve\$5 - wavetable server channel\$6 - envelope server channel\$7 - note duration server channel\$8 - note channel\$9 - %instr#%
 \, instrument specific server channel\$10 - \$0-toserver\$11 - fx channel\$12 - \$0-tick
 ;
+#X obj 9 457 ./pd-dependencies/wavetablesynth \$0-instr1notes \$0-writei1wt
+\$0-writei1env \$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes%
+%instr1% \$0-toserver \$0-instr1fx \$0-tick \$0-tickms;
+#X obj 189 457 ./pd-dependencies/wavetablesynth \$0-instr2notes \$0-writei2wt
+\$0-writei2env \$0-instr2nd-r %instr2wt% %instr2env% %instr2nd% %instr2notes%
+%instr2% \$0-toserver \$0-instr2fx \$0-tick \$0-tickms;
+#X obj 369 457 ./pd-dependencies/wavetablesynth \$0-instr3notes \$0-writei3wt
+\$0-writei3env \$0-instr3nd-r %instr3wt% %instr3env% %instr3nd% %instr3notes%
+%instr3% \$0-toserver \$0-instr3fx \$0-tick \$0-tickms;
+#X obj 549 457 ./pd-dependencies/wavetablesynth \$0-instr4notes \$0-writei4wt
+\$0-writei4env \$0-instr4nd-r %instr4wt% %instr4env% %instr4nd% %instr4notes%
+%instr4% \$0-toserver \$0-instr4fx \$0-tick \$0-tickms;
+#X obj 729 457 ./pd-dependencies/wavetablesynth \$0-instr5notes \$0-writei5wt
+\$0-writei5env \$0-instr5nd-r %instr5wt% %instr5env% %instr5nd% %instr5notes%
+%instr5% \$0-toserver \$0-instr5fx \$0-tick \$0-tickms;
+#X obj 908 457 ./pd-dependencies/wavetablesynth \$0-instr6notes \$0-writei6wt
+\$0-writei6env \$0-instr6nd-r %instr6wt% %instr6env% %instr6nd% %instr6notes%
+%instr6% \$0-toserver \$0-instr6fx \$0-tick \$0-tickms;
 #X connect 1 0 6 0;
 #X connect 1 0 11 0;
 #X connect 6 0 7 0;
-#X connect 8 0 88 0;
+#X connect 8 0 89 0;
 #X connect 10 0 8 0;
 #X connect 11 0 74 0;
 #X connect 11 1 75 0;
@@ -1103,12 +1111,12 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X connect 11 3 77 0;
 #X connect 11 4 78 0;
 #X connect 11 5 79 0;
-#X connect 12 0 89 0;
+#X connect 12 0 90 0;
 #X connect 14 0 12 0;
-#X connect 35 0 90 0;
-#X connect 36 0 91 0;
-#X connect 37 0 92 0;
-#X connect 38 0 93 0;
+#X connect 35 0 91 0;
+#X connect 36 0 92 0;
+#X connect 37 0 93 0;
+#X connect 38 0 94 0;
 #X connect 43 0 38 0;
 #X connect 44 0 37 0;
 #X connect 45 0 36 0;
