@@ -1,4 +1,4 @@
-#N canvas 384 222 1981 526 10;
+#N canvas 84 35 1981 526 10;
 #X obj 69 224 r \$0-hearticon-r;
 #X obj 69 273 s \$0-hearticon-s;
 #X obj 12 45 r \$0-poweronicon-r;
