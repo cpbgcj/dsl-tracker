@@ -1,4 +1,4 @@
-#N canvas 71 746 1321 568 10;
+#N canvas 1153 756 1321 568 10;
 #X obj 830 307 cnv 15 8 8 empty empty Typing\ Notes 43 6 0 10 #ffffff
 #00ffff 0;
 #X obj 830 287 cnv 15 8 8 empty empty Confirm\ Changes 43 6 0 10 #ffffff
@@ -62,7 +62,7 @@
 for debugging;
 #X obj 12 33 gate 1 0;
 #X obj 75 33 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
-0 1;
+1 1;
 #X obj 12 5 inlet;
 #X obj 830 287 bng 15 250 50 0 \$0-instrupdate r-null empty 17 7 0
 10 #fcfcfc #000000 #000000;
@@ -231,13 +231,13 @@ for debugging;
 #X obj 644 361 list prepend %instruments%;
 #X obj 75 53 s \$0-midion;
 #X obj 830 307 tgl 15 0 s-null \$0-midion empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 827 302 ggee/image ./ui-images/transparent.png 0 1 25 25 empty
 empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X obj 273 6 cnv 15 8 8 empty empty Canvas 24 6 0 10 #ffffff #00ffff
 0;
 #X obj 93 167 r \$0-octave;
-#N canvas 1175 523 1103 417 tracker-fx 1;
+#N canvas 40 886 1103 442 tracker-fx 1;
 #X obj 146 15 inlet;
 #X obj 115 335 outlet;
 #X text 185 66 Route FX Messages - Z is no FX, f 35;
@@ -767,8 +767,8 @@ empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X restore 401 145 pd 8xx;
 #X obj 524 170 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 514 196 outlet;
-#N canvas 1158 842 462 428 Cxx 0;
+#X obj 454 224 outlet;
+#N canvas 1131 250 462 453 Cxx 1;
 #X obj 20 14 inlet;
 #X obj 20 387 outlet;
 #X obj 20 57 list split 1;
@@ -883,8 +883,7 @@ empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X restore 514 145 pd Cxx;
 #X obj 464 170 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 454 196 outlet;
-#N canvas 841 565 413 501 Axy 0;
+#N canvas 1601 181 413 526 Axy 1;
 #X obj 20 14 inlet;
 #X obj 20 467 outlet;
 #X obj 20 57 list split 1;
@@ -978,13 +977,16 @@ empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X obj 118 407 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X floatatom 50 164 5 0 0 0 - - - 0 0, f 5;
-#X obj 90 179 inlet;
-#X text 90 164 Cxx Vol;
+#X obj 90 159 inlet;
+#X text 90 144 Cxx Vol;
 #X obj 220 104 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 180 401 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X msg 210 331 1;
+#X obj 90 204 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 90 184 * 64;
 #X connect 0 0 2 0;
 #X connect 0 0 21 0;
 #X connect 0 0 20 0;
@@ -1026,9 +1028,12 @@ empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X connect 33 0 30 1;
 #X connect 34 0 33 0;
 #X connect 35 0 23 1;
-#X connect 36 0 23 1;
+#X connect 36 0 42 0;
 #X connect 39 0 35 0;
 #X connect 40 0 18 1;
+#X connect 41 0 5 0;
+#X connect 42 0 41 0;
+#X connect 42 0 23 1;
 #X restore 454 145 pd Axy;
 #X obj 434 115 r \$0-trnote;
 #X floatatom 537 22 5 0 0 0 - - - 0 0, f 5;
@@ -1036,11 +1041,11 @@ empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X text 637 22 Default Vol (In decimal - 0 - 64 instead of 0 - 40)
 ;
 #X msg 483 23 32;
-#X text 446 217 Cxx output connects to Axy so it manipulates most recent
+#X text 526 317 Cxx output connects to Axy so it manipulates most recent
 vol, f 17;
-#X text 559 207 NOTE: Currentlydoesn't work ifCxx and note activate
+#X text 639 307 NOTE: Currentlydoesn't work ifCxx and note activate
 simultaneously, f 18;
-#N canvas 959 920 610 350 EXy 1;
+#N canvas 959 920 610 350 EXy 0;
 #X obj 175 29 inlet;
 #X obj 175 74 route 1 2 3 4 5 6 7 8 9 A B C D E, f 69;
 #N canvas 575 99 441 159 hex-to-int 0;
@@ -1130,7 +1135,7 @@ ofwavetablesynth.pd \, then replace with inlet;
 #X obj 252 116 r \$0-FX-num;
 #X text 747 225 NOTE: Sometimestriggers previous notebefore change.
 Need torevise bang order.;
-#N canvas 133 211 978 589 1xx-2xx 1;
+#N canvas 30 199 978 614 1xx-2xx 1;
 #X obj 71 554 outlet;
 #X obj 71 442 mtof;
 #X obj 346 16 inlet;
@@ -1376,18 +1381,18 @@ Need torevise bang order.;
 #X connect 82 0 81 0;
 #X restore 195 145 pd 1xx-2xx;
 #X connect 0 0 16 0;
-#X connect 0 0 48 0;
+#X connect 0 0 47 0;
 #X connect 3 0 10 0;
 #X connect 3 0 17 0;
-#X connect 5 0 51 8;
-#X connect 5 0 51 9;
-#X connect 5 0 51 24;
-#X connect 5 0 51 13;
+#X connect 5 0 50 8;
+#X connect 5 0 50 9;
+#X connect 5 0 50 24;
+#X connect 5 0 50 13;
 #X connect 6 0 1 0;
-#X connect 7 0 50 0;
+#X connect 7 0 49 0;
 #X connect 8 0 20 0;
 #X connect 9 0 5 0;
-#X connect 11 0 51 0;
+#X connect 11 0 50 0;
 #X connect 12 0 13 0;
 #X connect 13 0 9 0;
 #X connect 16 0 7 0;
@@ -1396,42 +1401,42 @@ Need torevise bang order.;
 #X connect 19 0 30 0;
 #X connect 20 1 11 0;
 #X connect 21 0 4 0;
-#X connect 21 0 51 1;
+#X connect 21 0 50 1;
 #X connect 25 0 26 0;
-#X connect 25 0 51 5;
+#X connect 25 0 50 5;
 #X connect 27 0 29 0;
 #X connect 27 0 28 0;
 #X connect 33 0 32 0;
 #X connect 33 0 31 0;
-#X connect 36 0 35 0;
 #X connect 36 0 34 0;
-#X connect 36 0 39 2;
-#X connect 39 0 38 0;
-#X connect 39 0 37 0;
-#X connect 40 0 33 1;
-#X connect 40 0 39 3;
-#X connect 40 0 36 1;
-#X connect 41 0 39 1;
-#X connect 42 0 44 0;
-#X connect 44 0 41 0;
-#X connect 48 0 21 0;
-#X connect 48 1 55 0;
-#X connect 48 2 55 0;
-#X connect 48 4 25 0;
-#X connect 48 7 27 0;
-#X connect 48 8 33 0;
-#X connect 48 10 39 0;
-#X connect 48 12 36 0;
-#X connect 48 14 47 0;
-#X connect 50 0 8 0;
-#X connect 50 0 52 0;
-#X connect 51 0 6 0;
-#X connect 53 0 55 1;
-#X connect 53 0 25 1;
-#X connect 53 0 27 1;
-#X connect 55 0 22 0;
-#X connect 55 0 51 2;
-#X connect 55 0 51 3;
+#X connect 36 0 38 2;
+#X connect 36 0 35 0;
+#X connect 38 0 37 0;
+#X connect 38 0 35 0;
+#X connect 39 0 33 1;
+#X connect 39 0 38 3;
+#X connect 39 0 36 1;
+#X connect 40 0 38 1;
+#X connect 41 0 43 0;
+#X connect 43 0 40 0;
+#X connect 47 0 21 0;
+#X connect 47 1 54 0;
+#X connect 47 2 54 0;
+#X connect 47 4 25 0;
+#X connect 47 7 27 0;
+#X connect 47 8 33 0;
+#X connect 47 10 38 0;
+#X connect 47 12 36 0;
+#X connect 47 14 46 0;
+#X connect 49 0 8 0;
+#X connect 49 0 51 0;
+#X connect 50 0 6 0;
+#X connect 52 0 54 1;
+#X connect 52 0 25 1;
+#X connect 52 0 27 1;
+#X connect 54 0 22 0;
+#X connect 54 0 50 2;
+#X connect 54 0 50 3;
 #X restore 244 498 pd tracker-fx;
 #X msg 443 435 Z 0 0;
 #X obj 373 372 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
@@ -1528,7 +1533,7 @@ point channel?;
 #X connect 72 0 14 0;
 #X connect 72 1 94 0;
 #X connect 72 2 100 1;
-#X connect 72 4 101 1;
+#X connect 72 3 101 1;
 #X connect 73 0 72 1;
 #X connect 74 0 99 0;
 #X connect 74 0 76 0;
