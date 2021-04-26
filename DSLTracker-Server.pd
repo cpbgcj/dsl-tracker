@@ -1043,9 +1043,9 @@ response;
 #X obj 23 121 netserver 3001;
 #X obj 23 337 route auth chat connect disconnect like purchase %instruments%
 %pattern%, f 78;
-#N canvas 729 745 502 349 patternmaster 1;
+#N canvas 1845 264 502 104 patternmaster 1;
 #X obj 5 5 inlet;
-#N canvas 1248 821 441 293 tickmaster 1;
+#N canvas 1843 431 441 318 tickmaster 1;
 #X obj 29 122 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X text 48 121 Debug tick;
@@ -1099,7 +1099,7 @@ response;
 #X connect 22 0 4 0;
 #X connect 22 0 8 0;
 #X restore 5 65 pd tickmaster;
-#X obj 5 30 route %tick-force% %tickms-change% %tprspeed-change%;
+#X obj 5 30 route %play% %tickms-change% %tprspeed-change%;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 2 1 1 1;
