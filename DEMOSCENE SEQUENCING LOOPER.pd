@@ -1,4 +1,4 @@
-#N canvas 84 35 1981 526 10;
+#N canvas 61 40 1966 526 10;
 #X obj 69 224 r \$0-hearticon-r;
 #X obj 69 273 s \$0-hearticon-s;
 #X obj 12 45 r \$0-poweronicon-r;
@@ -950,7 +950,7 @@ you are connected to a server., f 32;
 #X restore 15 116 pd hud-settings;
 #X obj 19 147 ggee/image ./ui-images/pixeljams.gif 0 0 32 32 empty
 empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
-#N canvas 848 485 1519 767 audio-engine 0;
+#N canvas 84 474 1503 767 audio-engine 0;
 #X obj 124 428 cnv 15 8 8 empty empty Select\ Channel 24 6 0 10 #ffffff
 #00ffff 0;
 #X obj 30 17 r \$0-instruments;
@@ -1057,7 +1057,7 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 616 184 s \$0-instr4fx;
 #X obj 676 138 s \$0-instr5fx;
 #X obj 734 94 s \$0-instr6fx;
-#N canvas 2043 748 450 300 tickmaster 0;
+#N canvas 1508 984 450 300 tickmaster 0;
 #X obj 26 136 s \$0-tick;
 #X obj 26 25 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -1069,6 +1069,15 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 202 7 loadbang;
 #X msg 202 32 150;
 #X obj 202 78 s \$0-tickms;
+#X text 126 31 BPM;
+#X text 304 31 Speed (Ticks per Row);
+#X floatatom 304 105 5 0 0 0 - - - 0 0, f 5;
+#X msg 304 80 6;
+#X obj 304 129 s \$0-tprspeed;
+#X obj 304 56 loadbang;
+#X obj 267 7 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 286 6 Refresh;
 #X connect 1 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 3 0;
@@ -1076,6 +1085,11 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X connect 5 0 8 0;
 #X connect 6 0 7 0;
 #X connect 7 0 5 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 14 0 12 0;
+#X connect 15 0 7 0;
+#X connect 15 0 12 0;
 #X restore 892 70 pd tickmaster;
 #X obj 848 263 s \$0-instr1nd-r;
 #X floatatom 841 221 5 0 0 0 - - - 0 0, f 5;
@@ -1084,22 +1098,28 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 ;
 #X obj 9 457 ./pd-dependencies/wavetablesynth \$0-instr1notes \$0-writei1wt
 \$0-writei1env \$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes%
-%instr1% \$0-toserver \$0-instr1fx \$0-tick \$0-tickms;
+%instr1% \$0-toserver \$0-instr1fx \$0-tick \$0-tickms \$0-tprspeed
+;
 #X obj 189 457 ./pd-dependencies/wavetablesynth \$0-instr2notes \$0-writei2wt
 \$0-writei2env \$0-instr2nd-r %instr2wt% %instr2env% %instr2nd% %instr2notes%
-%instr2% \$0-toserver \$0-instr2fx \$0-tick \$0-tickms;
+%instr2% \$0-toserver \$0-instr2fx \$0-tick \$0-tickms \$0-tprspeed
+;
 #X obj 369 457 ./pd-dependencies/wavetablesynth \$0-instr3notes \$0-writei3wt
 \$0-writei3env \$0-instr3nd-r %instr3wt% %instr3env% %instr3nd% %instr3notes%
-%instr3% \$0-toserver \$0-instr3fx \$0-tick \$0-tickms;
+%instr3% \$0-toserver \$0-instr3fx \$0-tick \$0-tickms \$0-tprspeed
+;
 #X obj 549 457 ./pd-dependencies/wavetablesynth \$0-instr4notes \$0-writei4wt
 \$0-writei4env \$0-instr4nd-r %instr4wt% %instr4env% %instr4nd% %instr4notes%
-%instr4% \$0-toserver \$0-instr4fx \$0-tick \$0-tickms;
+%instr4% \$0-toserver \$0-instr4fx \$0-tick \$0-tickms \$0-tprspeed
+;
 #X obj 729 457 ./pd-dependencies/wavetablesynth \$0-instr5notes \$0-writei5wt
 \$0-writei5env \$0-instr5nd-r %instr5wt% %instr5env% %instr5nd% %instr5notes%
-%instr5% \$0-toserver \$0-instr5fx \$0-tick \$0-tickms;
+%instr5% \$0-toserver \$0-instr5fx \$0-tick \$0-tickms \$0-tprspeed
+;
 #X obj 908 457 ./pd-dependencies/wavetablesynth \$0-instr6notes \$0-writei6wt
 \$0-writei6env \$0-instr6nd-r %instr6wt% %instr6env% %instr6nd% %instr6notes%
-%instr6% \$0-toserver \$0-instr6fx \$0-tick \$0-tickms;
+%instr6% \$0-toserver \$0-instr6fx \$0-tick \$0-tickms \$0-tprspeed
+;
 #X connect 1 0 6 0;
 #X connect 1 0 11 0;
 #X connect 6 0 7 0;
