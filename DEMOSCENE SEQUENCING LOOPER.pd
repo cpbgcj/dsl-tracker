@@ -1,4 +1,4 @@
-#N canvas 0 23 1304 525 10;
+#N canvas 52 142 1969 550 10;
 #X obj 69 224 r \$0-hearticon-r;
 #X obj 69 273 s \$0-hearticon-s;
 #X obj 12 45 r \$0-poweronicon-r;
@@ -10,7 +10,7 @@ empty empty 1970 526 1 0 10 #000000 0 -8 544 145.5 0 1 1;
 #X symbolatom 19 250 7 0 0 2 - #0-numdisp null 0 0, f 7;
 #X obj 129 251 bng 15 250 50 0 \$0-openfullchat \$0-openfullchat-r
 Open\ Chat -20 -9 0 10 #0080c0 #0000a0 #ffffff;
-#N canvas 199 693 1175 569 logic-systems 0;
+#N canvas 199 693 1115 495 logic-systems 0;
 #N canvas 609 658 1287 605 connect-logic 0;
 #X text 662 19 initiates connection;
 #X obj 858 178 r \$0-hostname-s;
@@ -56,7 +56,7 @@ also addresses weird timing issues during init if the spam is allowed.
 #X obj 343 144 gate 1 0;
 #X obj 343 57 r \$0-connected;
 #X obj 343 93 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 412 407 s \$0-toserver;
 #X msg 412 384 send disconnect \$1;
 #X obj 412 360 gate 1 0;
@@ -183,10 +183,10 @@ you are connected to a server., f 32;
 #X obj 974 431 gate 1 0;
 #X msg 1041 400 0;
 #X obj 1108 432 tgl 32 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X msg 1108 400 1;
 #X obj 552 565 text define -k chat-history;
-#A set;
+#A set Welcome\ Default-Username[1108]\ to\ the\ server! \;;
 #X obj 1108 343 r \$0-likeallow;
 #X msg 974 460 send like 1;
 #X obj 974 515 s \$0-toserver;
@@ -313,7 +313,7 @@ you are connected to a server., f 32;
 #X msg 221 42 0;
 #X msg 221 66 1;
 #X obj 180 105 tgl 32 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 221 105 gate 0 1;
 #X obj 37 32 r \$0-disconnect;
 #X msg 423 123 Authenticated... welcome!;
@@ -332,9 +332,9 @@ you are connected to a server., f 32;
 #X obj 81 280 r \$0-sendauth;
 #X obj 36 255 r \$0-connected;
 #X obj 236 340 tgl 55 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 97 319 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 856 159 gate 1 0;
 #X obj 856 108 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
@@ -951,7 +951,7 @@ you are connected to a server., f 32;
 #X restore 15 116 pd hud-settings;
 #X obj 19 147 ggee/image ./ui-images/pixeljams.gif 0 0 32 32 empty
 empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
-#N canvas 42 568 1460 767 audio-engine 0;
+#N canvas 156 8 1505 767 audio-engine 0;
 #X obj 322 428 cnv 15 8 8 empty empty Speed 35 6 0 10 #ffffff #00ffff
 0;
 #X obj 252 428 cnv 15 8 8 empty empty BPM 35 6 0 10 #ffffff #00ffff
@@ -1064,42 +1064,44 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 9 457 ./pd-dependencies/wavetablesynth \$0-instr1notes \$0-writei1wt
 \$0-writei1env \$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes%
 %instr1% \$0-toserver \$0-instr1fx \$0-tick \$0-tickms \$0-tprspeed
-;
+\$0-tickms-change \$0-tprspeed-change %instr1fx%;
 #X obj 189 457 ./pd-dependencies/wavetablesynth \$0-instr2notes \$0-writei2wt
 \$0-writei2env \$0-instr2nd-r %instr2wt% %instr2env% %instr2nd% %instr2notes%
 %instr2% \$0-toserver \$0-instr2fx \$0-tick \$0-tickms \$0-tprspeed
-;
+\$0-tickms-change \$0-tprspeed-change %instr2fx%;
 #X obj 369 457 ./pd-dependencies/wavetablesynth \$0-instr3notes \$0-writei3wt
 \$0-writei3env \$0-instr3nd-r %instr3wt% %instr3env% %instr3nd% %instr3notes%
 %instr3% \$0-toserver \$0-instr3fx \$0-tick \$0-tickms \$0-tprspeed
-;
+\$0-tickms-change \$0-tprspeed-change %instr3fx%;
 #X obj 549 457 ./pd-dependencies/wavetablesynth \$0-instr4notes \$0-writei4wt
 \$0-writei4env \$0-instr4nd-r %instr4wt% %instr4env% %instr4nd% %instr4notes%
 %instr4% \$0-toserver \$0-instr4fx \$0-tick \$0-tickms \$0-tprspeed
-;
+\$0-tickms-change \$0-tprspeed-change %instr4fx%;
 #X obj 729 457 ./pd-dependencies/wavetablesynth \$0-instr5notes \$0-writei5wt
 \$0-writei5env \$0-instr5nd-r %instr5wt% %instr5env% %instr5nd% %instr5notes%
 %instr5% \$0-toserver \$0-instr5fx \$0-tick \$0-tickms \$0-tprspeed
-;
+\$0-tickms-change \$0-tprspeed-change %instr5fx%;
 #X obj 908 457 ./pd-dependencies/wavetablesynth \$0-instr6notes \$0-writei6wt
 \$0-writei6env \$0-instr6nd-r %instr6wt% %instr6env% %instr6nd% %instr6notes%
 %instr6% \$0-toserver \$0-instr6fx \$0-tick \$0-tickms \$0-tprspeed
-;
-#X text 1105 387 wavetablesynth \$0-instr1notes \$0-writei1wt \$0-writei1env
-\$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes% %instr1%
-\$0-toserver \$0-instr1fx \$0-tick \$0-tickms \$0-tprspeed \$0-tprspeed
-;
-#X text 1105 444 \$1 - instr note send\$2 - write to wavetable receive
-name\$3 - write to envelope receive name\$4 - note duration recieve\$5
-- wavetable server channel\$6 - envelope server channel\$7 - note
-duration server channel\$8 - note channel\$9 - %instr#% \, instrument
-specific server channel\$10 - \$0-toserver\$11 - fx channel\$12
-- \$0-tick\$13 - \$0-tickms (ms per tick)\$14 - \$0-tprspeed (speed
-/ ticks per row);
+\$0-tickms-change \$0-tprspeed-change %instr6fx%;
+#X text 1105 377 ./pd-dependencies/wavetablesynth \$0-instr1notes \$0-writei1wt
+\$0-writei1env \$0-instr1nd-r %instr1wt% %instr1env% %instr1nd% %instr1notes%
+%instr1% \$0-toserver \$0-instr1fx \$0-tick \$0-tickms \$0-tprspeed
+\$0-tickms-change \$0-tprspeed-change %instr1fx%;
 #X text 888 311 Debug;
 #X floatatom 252 428 5 0 0 0 - #0-bpm #0-tickms-change 0 0, f 5;
 #X floatatom 322 428 5 0 0 0 - #0-speed #0-tprspeed-change 0 0, f
 5;
+#X text 1105 444 \$1 - instr note send \$2 - write to wavetable receive
+name \$3 - write to envelope receive name \$4 - note duration recieve
+\$5 - wavetable server channel \$6 - envelope server channel \$7
+- note duration server channel \$8 - note channel \$9 - %instr#%
+\, instrument specific server channel \$10 - \$0-toserver \$11 -
+fx server channel \$12 - \$0-tick \$13 - BPM (ms per tick) \$14
+- Speed (ticks per row) \$15 - BPM change (tickms-change) \$16 -
+Speed change (tprspeed-change) \$17 - instr FX inlet $xx - note sustain
+point channel? (Future version);
 #X connect 3 0 8 0;
 #X connect 3 0 13 0;
 #X connect 8 0 9 0;
@@ -1244,7 +1246,7 @@ empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X coords 0 0 1 1 32 32 0;
 #X scroll 1;
 #X restore 122 40 pd options;
-#N canvas 596 303 450 325 pattern 0;
+#N canvas 560 45 450 325 pattern 0;
 #N canvas 640 432 800 392 tickmaster 0;
 #X obj 6 70 s \$0-tick;
 #X obj 46 8 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -1401,7 +1403,7 @@ empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X connect 2 2 0 2;
 #X restore 80 65 pd pattern;
 #X coords 0 -1 1 1 1079 334 2 15 141;
-#X restore 881 22 pd logic-systems;
+#X restore 874 22 pd logic-systems;
 #X obj 69 241 ggee/image ./ui-images/pixelheart1.png 1 1 32 32 empty
 empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 12 62 ggee/image ./ui-images/poweron.png 0 1 25 25 empty empty
@@ -1482,15 +1484,15 @@ empty empty 128 128 1 0 10 #000000 0 -8 64 64 0 1 1;
 #X restore 16 384 pd shop-icon;
 #X symbolatom 15 35 37 0 0 2 - #0-hostname-r #0-hostname-s 0 0, f
 37;
-#N canvas 45 28 778 796 key-commands 0;
+#N canvas 74 361 778 821 key-commands 1;
 #X obj 9 83 key;
 #X msg 292 243 inc;
 #X msg 197 243 dec;
-#X floatatom 12 392 5 0 127 0 - - - 0 1, f 5;
-#X floatatom 12 416 5 0 127 0 - - - 0 1, f 5;
+#X floatatom 12 392 5 0 127 0 - - - 0 0, f 5;
+#X floatatom 12 416 5 0 127 0 - - - 0 0, f 5;
 #X floatatom 12 439 5 0 127 0 - - - 0 0, f 5;
-#X floatatom 12 462 5 0 127 0 - - - 0 1, f 5;
-#X floatatom 12 485 5 0 127 0 - - - 0 1, f 5;
+#X floatatom 12 462 5 0 127 0 - - - 0 0, f 5;
+#X floatatom 12 485 5 0 127 0 - - - 0 0, f 5;
 #X text 223 190 Main movement logic;
 #X msg 114 212 focus 1;
 #X obj 138 149 t b b;
@@ -1538,34 +1540,44 @@ fill rgba(255 \\\, 0.5 \, 255 \\\, 0.5);
 #X symbolatom 165 486 7 0 0 0 - - - 0 0, f 7;
 #X text 5 515 MIDI value;
 #X text 75 515 FX values;
-#X obj 136 783 pack s s s;
+#X obj 57 783 pack s s s;
 #X obj 420 493 t f f f;
-#X obj 8 885 print ONE_NUM;
-#X obj 136 884 print ONE_LIST;
-#X obj 23 909 print TWO_NUM;
-#X obj 36 935 print THREE_NUM;
-#X obj 53 961 print FOUR_NUM;
-#X obj 69 988 print FIVE_NUM;
-#X obj 144 908 print TWO_LIST;
-#X obj 158 934 print THREE_LIST;
-#X obj 178 957 print FOUR_LIST;
-#X obj 197 985 print FIVE_LIST;
 #X obj 196 281 counter 0 20;
-#X obj 7 846 gate 5;
-#X obj 136 846 gate 5;
+#X obj 7 826 gate 5;
+#X obj 386 846 gate 5;
 #X obj 448 562 t b b b b;
 #X obj 466 593 t b b b b;
 #X obj 486 624 t b b b b;
 #X obj 508 653 t b b b b;
 #X obj 523 682 t b b b b;
+#X obj 7 961 list prepend send;
+#X obj 7 986 list trim;
+#X text 143 911 Send notes to server;
+#X obj 100 986 tosymbol;
+#X symbolatom 100 1011 46 0 0 0 - - - 0 0, f 46;
+#X obj 7 936 list prepend %instruments%;
+#X obj 7 1011 s \$0-toserver;
+#X obj 7 886 list prepend %instr1notes%;
+#X obj 7 911 list prepend %instr1%;
+#X obj 387 961 list prepend send;
+#X obj 387 986 list trim;
+#X text 523 911 Send notes to server;
+#X obj 480 986 tosymbol;
+#X symbolatom 480 1011 46 0 0 0 - - - 0 0, f 46;
+#X obj 387 936 list prepend %instruments%;
+#X obj 387 1011 s \$0-toserver;
+#X obj 387 911 list prepend %instr1%;
+#X obj 387 886 list prepend %instr1fx%;
+#X obj 7 851 moses 1;
+#X text 57 851 Makes 0s a "don't retrigger" option;
 #X connect 0 0 16 0;
-#X connect 1 0 64 0;
-#X connect 2 0 64 0;
-#X connect 3 0 65 1;
-#X connect 4 0 65 1;
-#X connect 5 0 65 1;
-#X connect 6 0 65 1;
-#X connect 7 0 65 1;
+#X connect 1 0 54 0;
+#X connect 2 0 54 0;
+#X connect 3 0 55 1;
+#X connect 4 0 55 1;
+#X connect 5 0 55 1;
+#X connect 6 0 55 1;
+#X connect 7 0 55 1;
 #X connect 9 0 31 1;
 #X connect 10 0 9 0;
 #X connect 10 1 32 0;
@@ -1583,11 +1595,11 @@ fill rgba(255 \\\, 0.5 \, 255 \\\, 0.5);
 #X connect 16 5 13 0;
 #X connect 16 6 34 0;
 #X connect 17 0 53 0;
-#X connect 18 0 67 0;
-#X connect 18 1 68 0;
-#X connect 18 2 69 0;
-#X connect 18 3 70 0;
-#X connect 18 4 71 0;
+#X connect 18 0 57 0;
+#X connect 18 1 58 0;
+#X connect 18 2 59 0;
+#X connect 18 3 60 0;
+#X connect 18 4 61 0;
 #X connect 20 0 24 0;
 #X connect 21 0 24 0;
 #X connect 22 0 20 0;
@@ -1660,42 +1672,57 @@ fill rgba(255 \\\, 0.5 \, 255 \\\, 0.5);
 #X connect 47 0 52 2;
 #X connect 48 0 52 2;
 #X connect 49 0 52 2;
-#X connect 52 0 66 1;
+#X connect 52 0 56 1;
 #X connect 53 0 19 0;
 #X connect 53 0 18 0;
-#X connect 53 1 65 0;
-#X connect 53 2 66 0;
-#X connect 64 0 31 0;
-#X connect 65 0 54 0;
-#X connect 65 1 56 0;
-#X connect 65 2 57 0;
-#X connect 65 3 58 0;
-#X connect 65 4 59 0;
-#X connect 66 0 55 0;
-#X connect 66 1 60 0;
-#X connect 66 2 61 0;
-#X connect 66 3 62 0;
-#X connect 66 4 63 0;
-#X connect 67 0 3 0;
-#X connect 67 1 35 0;
-#X connect 67 2 40 0;
-#X connect 67 3 45 0;
-#X connect 68 0 4 0;
-#X connect 68 1 36 0;
-#X connect 68 2 41 0;
-#X connect 68 3 46 0;
-#X connect 69 0 5 0;
-#X connect 69 1 37 0;
-#X connect 69 2 42 0;
-#X connect 69 3 47 0;
-#X connect 70 0 6 0;
-#X connect 70 1 38 0;
-#X connect 70 2 43 0;
-#X connect 70 3 48 0;
-#X connect 71 0 7 0;
-#X connect 71 1 39 0;
-#X connect 71 2 44 0;
-#X connect 71 3 49 0;
+#X connect 53 1 55 0;
+#X connect 53 2 56 0;
+#X connect 54 0 31 0;
+#X connect 55 0 80 0;
+#X connect 55 1 80 0;
+#X connect 55 2 80 0;
+#X connect 55 3 80 0;
+#X connect 55 4 80 0;
+#X connect 56 0 79 0;
+#X connect 56 1 79 0;
+#X connect 56 2 79 0;
+#X connect 56 3 79 0;
+#X connect 56 4 79 0;
+#X connect 57 0 3 0;
+#X connect 57 1 35 0;
+#X connect 57 2 40 0;
+#X connect 57 3 45 0;
+#X connect 58 0 4 0;
+#X connect 58 1 36 0;
+#X connect 58 2 41 0;
+#X connect 58 3 46 0;
+#X connect 59 0 5 0;
+#X connect 59 1 37 0;
+#X connect 59 2 42 0;
+#X connect 59 3 47 0;
+#X connect 60 0 6 0;
+#X connect 60 1 38 0;
+#X connect 60 2 43 0;
+#X connect 60 3 48 0;
+#X connect 61 0 7 0;
+#X connect 61 1 39 0;
+#X connect 61 2 44 0;
+#X connect 61 3 49 0;
+#X connect 62 0 63 0;
+#X connect 62 0 65 0;
+#X connect 63 0 68 0;
+#X connect 65 0 66 0;
+#X connect 67 0 62 0;
+#X connect 69 0 70 0;
+#X connect 70 0 67 0;
+#X connect 71 0 72 0;
+#X connect 71 0 74 0;
+#X connect 72 0 77 0;
+#X connect 74 0 75 0;
+#X connect 76 0 71 0;
+#X connect 78 0 76 0;
+#X connect 79 0 78 0;
+#X connect 80 1 69 0;
 #X coords 0 -1 1 1 213 128 2 6 383;
 #X restore 413 300 pd key-commands;
 #X obj 415 284 cnv 1 1 1 empty empty SEQUENCER 9 3 1 18 #e0e0e0 #f53046

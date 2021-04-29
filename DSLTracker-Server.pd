@@ -959,7 +959,7 @@ response;
 #X connect 9 0 1 0;
 #X connect 10 0 0 0;
 #X restore 23 394 pd auth-system;
-#N canvas 339 446 753 359 instruments 0;
+#N canvas 1758 179 753 357 instruments 0;
 #X obj 9 8 inlet;
 #X obj 9 33 route %instr1% %instr2% %instr3% %instr4% %instr5% %instr6%
 ;
@@ -1043,9 +1043,9 @@ response;
 #X obj 23 121 netserver 3001;
 #X obj 23 337 route auth chat connect disconnect like purchase %instruments%
 %pattern%, f 78;
-#N canvas 1845 264 502 104 patternmaster 1;
+#N canvas 1852 246 502 104 patternmaster 0;
 #X obj 5 5 inlet;
-#N canvas 1843 431 441 318 tickmaster 1;
+#N canvas 1850 418 441 318 tickmaster 0;
 #X obj 29 122 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X text 48 121 Debug tick;
