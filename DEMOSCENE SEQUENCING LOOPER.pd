@@ -1,4 +1,4 @@
-#N canvas 823 30 1669 861 10;
+#N canvas 823 30 1669 836 10;
 #X obj 789 644 s \$0-hearticon-s;
 #X obj 789 595 r \$0-hearticon-r;
 #X obj 732 458 s \$0-poweronicon-s;
@@ -10,8 +10,8 @@ empty empty empty 1669 834 1 0 10 #000000 0 -8 12.5 12.5 0 1 1;
 #X symbolatom 739 621 7 0 0 2 - #0-numdisp null 0 0, f 7;
 #X obj 849 622 bng 15 250 50 0 \$0-openfullchat \$0-openfullchat-r
 Open\ Chat -20 -9 0 10 #0080c0 #0000a0 #ffffff;
-#N canvas 496 718 1115 495 logic-systems 1;
-#N canvas 609 658 1287 605 connect-logic 1;
+#N canvas 496 718 1115 495 logic-systems 0;
+#N canvas 609 658 1287 605 connect-logic 0;
 #X text 662 19 initiates connection;
 #X obj 858 178 r \$0-hostname-s;
 #X obj 799 101 t b b b;
@@ -56,7 +56,7 @@ also addresses weird timing issues during init if the spam is allowed.
 #X obj 343 144 gate 1 0;
 #X obj 343 57 r \$0-connected;
 #X obj 343 93 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 412 407 s \$0-toserver;
 #X msg 412 384 send disconnect \$1;
 #X obj 412 360 gate 1 0;
@@ -185,10 +185,10 @@ you are connected to a server., f 32;
 #X obj 974 431 gate 1 0;
 #X msg 1041 400 0;
 #X obj 1108 432 tgl 32 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X msg 1108 400 1;
 #X obj 552 565 text define -k chat-history;
-#A set Welcome\ Default-Username[1404]\ to\ the\ server! \;;
+#A set;
 #X obj 1108 343 r \$0-likeallow;
 #X msg 974 460 send like 1;
 #X obj 974 515 s \$0-toserver;
@@ -315,7 +315,7 @@ you are connected to a server., f 32;
 #X msg 221 42 0;
 #X msg 221 66 1;
 #X obj 180 105 tgl 32 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 221 105 gate 0 1;
 #X obj 37 32 r \$0-disconnect;
 #X msg 423 123 Authenticated... welcome!;
@@ -334,9 +334,9 @@ you are connected to a server., f 32;
 #X obj 81 280 r \$0-sendauth;
 #X obj 36 255 r \$0-connected;
 #X obj 236 340 tgl 55 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 97 319 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 856 159 gate 1 0;
 #X obj 856 108 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
@@ -972,7 +972,7 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 395 18 tosymbol;
 #X symbolatom 395 43 31 0 0 0 - - - 0 0, f 31;
 #X obj 9 355 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
-0 1;
+1 1;
 #X text 29 355 Channel 1;
 #X obj 9 337 r \$0-ch1toggle;
 #X obj 30 42 route %instr1% %instr2% %instr3% %instr4% %instr5% %instr6%
@@ -1008,7 +1008,7 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 729 355 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X obj 908 355 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X text 389 355 Channel 3;
 #X text 569 355 Channel 4;
 #X text 749 355 Channel 5;
@@ -1024,7 +1024,7 @@ empty empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 79 \; 54 80 \; 121 81 \; 55 82 \; 117 83 \; 105 84 \;;
 #X text 637 18 Key -> note translation for typing midi notes;
 #X obj 49 428 hradio 15 0 0 6 \$0-channeltoggle r-null empty 0 -8 0
-10 #fcfcfc #000000 #000000 5;
+10 #fcfcfc #000000 #000000 0;
 #X obj 716 151 r \$0-channeltoggle;
 #X obj 716 291 s \$0-ch1toggle;
 #X obj 730 265 s \$0-ch2toggle;
@@ -1147,7 +1147,7 @@ point channel? (Future version);
 #X obj 948 372 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 924 59 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X text 944 59 Channel 1;
 #X obj 924 41 r \$0-ch1toggle;
 #X obj 1114 59 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -1161,7 +1161,7 @@ point channel? (Future version);
 #X obj 1304 169 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X obj 1113 279 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X text 1324 59 Channel 3;
 #X text 1134 169 Channel 4;
 #X text 1324 169 Channel 5;
@@ -2059,7 +2059,7 @@ movement;
 #X obj 138 107 sel 1;
 #X obj 295 107 sel 1;
 #X obj 1039 1177 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X text 1059 1177 Channel 1;
 #X obj 1039 1159 r \$0-ch1toggle;
 #X obj 1129 1177 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -2073,7 +2073,7 @@ movement;
 #X obj 1399 1177 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X obj 1488 1177 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X text 1239 1177 Channel 3;
 #X text 1329 1177 Channel 4;
 #X text 1419 1177 Channel 5;
@@ -2111,7 +2111,7 @@ movement;
 #X obj 5 5 inlet;
 #X obj 105 59 list prepend 1;
 #X obj 128 464 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X text 148 464 Channel 1;
 #X obj 128 446 r \$0-ch1toggle;
 #X obj 218 464 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -2125,7 +2125,7 @@ movement;
 #X obj 488 464 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X obj 577 464 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X text 328 464 Channel 3;
 #X text 418 464 Channel 4;
 #X text 508 464 Channel 5;
@@ -3426,7 +3426,7 @@ f 1494;
 #X obj 514 29 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X obj 613 29 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X text 334 29 Channel 3;
 #X text 434 29 Channel 4;
 #X text 534 29 Channel 5;
@@ -3443,7 +3443,7 @@ f 1494;
 #X obj 613 52 sel 1;
 #X obj 33 107 route %instr1%;
 #X obj 114 29 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 33 234 ./pd-dependencies/unpack-seqinst;
 #X obj 313 234 ./pd-dependencies/unpack-seqinst;
 #X obj 593 234 ./pd-dependencies/unpack-seqinst;
