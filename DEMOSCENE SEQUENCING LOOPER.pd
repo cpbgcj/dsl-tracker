@@ -1,4 +1,4 @@
-#N canvas 626 247 1669 835 10;
+#N canvas 599 21 1669 835 10;
 #X obj 789 644 s \$0-hearticon-s;
 #X obj 789 595 r \$0-hearticon-r;
 #X obj 732 458 s \$0-poweronicon-s;
@@ -10,7 +10,7 @@ empty empty empty 1669 834 1 0 10 #000000 0 -8 12.5 12.5 0 1 1;
 #X symbolatom 739 621 7 0 0 2 - #0-numdisp null 0 0, f 7;
 #X obj 849 622 bng 15 250 50 0 \$0-openfullchat \$0-openfullchat-r
 Open\ Chat -20 -9 0 10 #0080c0 #0000a0 #ffffff;
-#N canvas 199 693 1115 495 logic-systems 0;
+#N canvas 496 718 1115 495 logic-systems 0;
 #N canvas 609 658 1287 605 connect-logic 0;
 #X text 662 19 initiates connection;
 #X obj 858 178 r \$0-hostname-s;
@@ -56,7 +56,7 @@ also addresses weird timing issues during init if the spam is allowed.
 #X obj 343 144 gate 1 0;
 #X obj 343 57 r \$0-connected;
 #X obj 343 93 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 412 407 s \$0-toserver;
 #X msg 412 384 send disconnect \$1;
 #X obj 412 360 gate 1 0;
@@ -131,7 +131,7 @@ port., f 34;
 #X connect 54 0 17 0;
 #X connect 56 0 12 0;
 #X restore 15 40 pd connect-logic;
-#N canvas 265 503 1211 790 chat-logic 0;
+#N canvas 709 500 1211 747 chat-logic 0;
 #X obj 23 40 loadbang;
 #X obj 23 206 s \$0-chat-r;
 #X obj 23 110 tosymbol;
@@ -186,7 +186,7 @@ you are connected to a server., f 32;
 #000000 0 1;
 #X msg 1108 400 1;
 #X obj 552 565 text define -k chat-history;
-#A set;
+#A set Welcome\ Default-Username[1392]\ to\ the\ server! \;;
 #X obj 1108 343 r \$0-likeallow;
 #X msg 974 460 send like 1;
 #X obj 974 515 s \$0-toserver;
@@ -313,7 +313,7 @@ you are connected to a server., f 32;
 #X msg 221 42 0;
 #X msg 221 66 1;
 #X obj 180 105 tgl 32 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 221 105 gate 0 1;
 #X obj 37 32 r \$0-disconnect;
 #X msg 423 123 Authenticated... welcome!;
@@ -332,9 +332,9 @@ you are connected to a server., f 32;
 #X obj 81 280 r \$0-sendauth;
 #X obj 36 255 r \$0-connected;
 #X obj 236 340 tgl 55 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 97 319 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 856 159 gate 1 0;
 #X obj 856 108 tgl 35 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
@@ -785,7 +785,7 @@ you are connected to a server., f 32;
 #X connect 156 0 88 0;
 #X connect 157 0 73 0;
 #X restore 15 91 pd points-system;
-#N canvas 545 655 1617 472 hud-settings 0;
+#N canvas 548 681 1617 472 hud-settings 0;
 #X msg 20 40 click 1;
 #X obj 20 20 loadbang;
 #X obj 483 128 r \$0-powerofficon-s;
@@ -1106,7 +1106,7 @@ Speed change (tprspeed-change) \$17 - instr FX inlet $xx - note sustain
 point channel? (Future version);
 #X obj 101 337 r \$0-typing;
 #X obj 406 428 tgl 17 0 \$0-typing r-null empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X floatatom 101 355 5 0 0 0 - - - 0 0, f 5;
 #X floatatom 9 371 5 0 0 0 - - - 0 0, f 5;
 #X obj 9 391 *;
@@ -1312,7 +1312,7 @@ point channel? (Future version);
 #X obj 20 236 bng 15 250 50 0 \$0-selce \$0-cebng empty 17 7 0 10 #28f4f4
 #000000 #000000;
 #X restore 105 15 pd storefront;
-#N canvas 649 666 242 95 options 0;
+#N canvas 429 1034 242 95 options 0;
 #X obj 16 53 tgl 23 0 \$0-ococ null-ococ empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X text 51 21 User Options;
@@ -1323,7 +1323,7 @@ empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X scroll 1;
 #X restore 122 40 pd options;
 #N canvas 560 45 450 325 pattern 0;
-#N canvas 640 432 800 392 tickmaster 0;
+#N canvas 565 950 800 392 tickmaster 0;
 #X obj 6 70 s \$0-tick;
 #X obj 46 8 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -1374,16 +1374,9 @@ empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X obj 238 203 s \$0-speed;
 #X msg 152 72 20.8333;
 #X obj 211 31 t b b;
-#X obj 612 32 moses 0;
 #X msg 612 57 1;
-#X obj 372 56 moses 60;
-#X msg 372 81 60;
 #X floatatom 372 106 5 0 0 0 - - - 0 0, f 5;
-#X obj 372 130 moses 200;
-#X msg 423 150 200;
 #X floatatom 372 167 5 0 0 0 - - - 0 0, f 5;
-#X obj 612 106 moses 10;
-#X msg 657 127 10;
 #X floatatom 612 144 5 0 0 0 - - - 0 0, f 5;
 #X obj 346 140 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
@@ -1395,9 +1388,16 @@ empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #000000;
 #X floatatom 16 128 5 0 0 0 - - - 0 0, f 5;
 #X obj 6 206 s \$0-next-row;
+#X obj 612 106 moses 31;
+#X msg 657 127 31;
+#X obj 372 130 moses 255;
+#X msg 423 150 255;
+#X obj 372 56 moses 32;
+#X msg 372 81 32;
+#X obj 612 32 moses 0;
 #X connect 1 0 0 0;
 #X connect 1 0 14 0;
-#X connect 1 0 61 0;
+#X connect 1 0 54 0;
 #X connect 3 0 5 0;
 #X connect 3 0 36 0;
 #X connect 4 0 9 0;
@@ -1406,18 +1406,18 @@ empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X connect 7 0 33 1;
 #X connect 7 0 35 1;
 #X connect 7 0 43 0;
-#X connect 7 0 61 4;
+#X connect 7 0 54 4;
 #X connect 9 0 46 0;
 #X connect 10 0 0 0;
 #X connect 10 0 14 0;
-#X connect 10 0 61 0;
+#X connect 10 0 54 0;
 #X connect 11 0 3 0;
 #X connect 12 0 7 0;
-#X connect 12 0 58 0;
+#X connect 12 0 51 0;
 #X connect 16 0 18 0;
-#X connect 17 0 47 0;
-#X connect 18 0 49 0;
-#X connect 19 0 55 0;
+#X connect 17 0 65 0;
+#X connect 18 0 63 0;
+#X connect 19 0 59 0;
 #X connect 20 0 21 0;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
@@ -1441,35 +1441,35 @@ empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X connect 40 1 38 1;
 #X connect 41 0 42 0;
 #X connect 42 0 31 0;
-#X connect 42 0 54 0;
+#X connect 42 0 49 0;
 #X connect 43 0 44 0;
-#X connect 43 0 57 0;
+#X connect 43 0 50 0;
 #X connect 45 0 3 0;
 #X connect 46 0 45 0;
 #X connect 46 1 6 0;
-#X connect 47 0 48 0;
-#X connect 47 1 19 0;
-#X connect 48 0 19 0;
-#X connect 49 0 50 0;
-#X connect 49 1 51 0;
-#X connect 50 0 51 0;
-#X connect 51 0 52 0;
-#X connect 52 0 54 0;
-#X connect 52 1 53 0;
-#X connect 53 0 54 0;
-#X connect 54 0 29 0;
-#X connect 55 0 57 0;
-#X connect 55 1 56 0;
-#X connect 56 0 57 0;
-#X connect 57 0 25 0;
-#X connect 58 0 54 0;
-#X connect 58 0 61 2;
-#X connect 59 0 60 0;
-#X connect 60 0 38 1;
-#X connect 61 0 62 0;
-#X connect 61 0 64 0;
-#X connect 62 0 63 0;
-#X connect 63 0 65 0;
+#X connect 47 0 19 0;
+#X connect 48 0 61 0;
+#X connect 49 0 29 0;
+#X connect 50 0 25 0;
+#X connect 51 0 49 0;
+#X connect 51 0 54 2;
+#X connect 52 0 53 0;
+#X connect 53 0 38 1;
+#X connect 54 0 55 0;
+#X connect 54 0 57 0;
+#X connect 55 0 56 0;
+#X connect 56 0 58 0;
+#X connect 59 0 50 0;
+#X connect 59 1 60 0;
+#X connect 60 0 50 0;
+#X connect 61 0 49 0;
+#X connect 61 1 62 0;
+#X connect 62 0 49 0;
+#X connect 63 0 64 0;
+#X connect 63 1 48 0;
+#X connect 64 0 48 0;
+#X connect 65 0 47 0;
+#X connect 65 1 19 0;
 #X restore 5 56 pd tickmaster;
 #X obj 5 5 r \$0-pattern;
 #X obj 5 30 route %tick% %tickms% %tprspeed%;
@@ -1478,6 +1478,31 @@ empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
 #X connect 2 1 0 1;
 #X connect 2 2 0 2;
 #X restore 80 65 pd pattern;
+#N canvas 244 679 391 524 manual 0;
+#X text 5 5 0xy - Arpeggiox = semitone offset y = semitone offset
+NOTE: Arpeggiates between root note \, root + x semitones \, and root
++ y semitones. NOTE: Each pitch lasts 1 tick;
+#X text 5 146 4xy - Vibrato x = speed y = depth;
+#X text 5 112 2xx - Portamento Down xx = speed. Higher # \, faster
+speed.;
+#X text 5 78 1xx - Portamento Up xx = speed. Higher # \, faster speed.
+;
+#X text 5 180 7xy - Tremolo x = speed y = depth;
+#X text 5 214 8xx - Set Note Pan xx = panning position NOTE: 0 =
+far left \, FF = far right;
+#X text 5 261 Axy - Volume Slide x = slide up speed y = slide down
+speed;
+#X text 5 295 Cxx - Note Volume xx = note volumeNOTE: Note volume
+is typically limited from 0 - 40 (hex).;
+#X text 5 342 E9x - Re-Trigger Note x = interval NOTE: Re-triggers
+a note every x ticks.;
+#X text 5 389 ECx - Note Cut x = tick number NOTE: Sets the note’s
+volume to 0 x ticks after the row starts.;
+#X text 5 449 Fxx Set Speed/BPM xx = Speed/BPM NOTE: 1 - 1F Sets
+the tick speed (How many ticks per row) 20 - FF Sets BPM \, or more
+specifically the speed that ticks are played at. 0 stops playback.
+;
+#X restore 122 91 pd manual;
 #X coords 0 -1 1 1 1079 334 2 15 141;
 #X restore 554 43 pd logic-systems;
 #X obj 789 612 ggee/image ./ui-images/pixelheart1.png 1 1 32 32 empty
@@ -1530,9 +1555,9 @@ empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 1 1;
 #X restore 785 430 pd gear;
 #X obj 1485 412 cnv 15 8 8 empty empty Double-click\ to\ open\ the\ shop!
 -29 -16 0 10 #ffffff #00ffff 0;
-#X obj 735 406 cnv 15 8 8 empty empty Double-click\ to\ open\ options
-83 25 0 10 #ffffff #00ffff 0;
-#N canvas 1047 518 450 325 shop-icon 0;
+#X obj 735 406 cnv 15 8 8 empty empty Double-click\ to\ open 49 60
+0 10 #ffffff #00ffff 0;
+#N canvas 934 900 450 325 shop-icon 0;
 #X obj 61 154 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X obj 67 260 gate;
@@ -2917,12 +2942,38 @@ movement;
 0;
 #X obj 601 478 cnv 1 1 1 empty empty STOP 10 -1 0 14 #e0e0e0 #fc0000
 0;
-#X obj 555 536 cnv 1 1 1 empty empty INSTRUCTIONS: 13 -1 0 14 #0000ff
+#X obj 537 506 cnv 1 1 1 empty empty INSTRUCTIONS: 13 -1 0 14 #000000
 #ff8fff 0;
-#X obj 554 553 cnv 1 1 1 empty empty Arrow\ keys\ to\ navigate\ tracker
-11 -2 0 10 #004080 #ffaeff 0;
-#X obj 554 564 cnv 1 1 1 empty empty Space\ to\ commit\ value 11 -1
-0 10 #000080 #ffadfe 0;
+#X obj 536 523 cnv 1 1 1 empty empty Arrow\ keys\ to\ navigate\ tracker
+11 -2 0 10 #000000 #ffaeff 0;
+#X obj 536 534 cnv 1 1 1 empty empty Space\ to\ commit\ value 11 -1
+0 10 #000000 #ffadfe 0;
+#N canvas 921 923 383 219 manual-button 0;
+#X obj 40 5 ggee/image ./ui-images/manual.png 0 1 32 32 1003-gear-s
+1003-gear-r empty 32 32 1 0 10 #000000 0 -8 16 16 0 1 1;
+#X obj 40 45 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 46 151 gate;
+#X text 76 152 Prevents menu from repeatedly opening and closing;
+#X msg 67 98 1;
+#X obj 40 68 t b b;
+#X msg 39 127 1;
+#X msg 9 127 0;
+#X obj 9 104 del 1000;
+#X msg 46 173 \; pd-manual vis \$1;
+#X text 59 45 Opens manual when double-clicked;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 9 0;
+#X connect 4 0 2 1;
+#X connect 5 0 6 0;
+#X connect 5 1 4 0;
+#X connect 5 1 8 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 7 0;
+#X coords 0 -1 1 1 32 32 2 40 5;
+#X restore 817 430 pd manual-button;
 #X connect 1 0 10 0;
 #X connect 4 0 12 0;
 #X connect 5 0 11 0;
