@@ -1,4 +1,4 @@
-#N canvas -1 564 1765 776 10;
+#N canvas 473 223 1945 776 10;
 #X text 25 23 Instrument 1 messages sent here \,  broadcast to everyone
 ;
 #N canvas 0 0 450 300 (subpatch) 0;
@@ -9,21 +9,22 @@
 #X array \$0-inst1-env 256 float 16 black #ffc584;
 #X coords 0 1 255 0 158 89 1;
 #X restore 22 157 graph;
-#X floatatom 23 256 5 0 0 0 - #0-note-dur #0-note-dur-out 0, f 5;
+#X floatatom 23 256 5 0 0 0 - #0-note-dur #0-note-dur-out 0 0, f 5
+;
 #X text 59 256 Note Duration (in ms);
 #X text 331 264 sends to specific server channel:;
 #X text 331 277 instrument# wavetable/env;
 #X obj 202 60 inlet;
 #X obj 331 194 list prepend broadcast;
 #X obj 432 220 tosymbol;
-#X symbolatom 432 245 28 0 0 0 - - - 9.0926e+08, f 28;
+#X symbolatom 432 245 28 0 0 0 - - - 9.0926e+08 0, f 28;
 #X obj 331 219 list trim;
 #X obj 202 119 tabwrite \$0-inst1-wt;
 #X text 645 264 sends to specific server channel:;
 #X text 645 277 instrument# wavetable/env;
 #X obj 645 194 list prepend broadcast;
 #X obj 746 220 tosymbol;
-#X symbolatom 746 245 30 0 0 0 - - - 9.0926e+08, f 30;
+#X symbolatom 746 245 30 0 0 0 - - - 9.0926e+08 0, f 30;
 #X obj 645 219 list trim;
 #X obj 511 119 tabwrite \$0-inst1-env;
 #X obj 331 169 list prepend %instruments%;
@@ -35,7 +36,7 @@
 #X text 935 297 instrument# wavetable/env;
 #X obj 935 214 list prepend broadcast;
 #X obj 1036 240 tosymbol;
-#X symbolatom 1036 265 30 0 0 0 - - - 9.0926e+08, f 30;
+#X symbolatom 1036 265 30 0 0 0 - - - 9.0926e+08 0, f 30;
 #X obj 935 239 list trim;
 #X obj 935 189 list prepend %instruments%;
 #X obj 935 189 list prepend %instruments%;
@@ -60,7 +61,7 @@
 #X obj 321 374 loadbang;
 #X msg 321 397 64;
 #X obj 252 679 tosymbol;
-#X symbolatom 252 704 45 0 0 1 - - - 8.58927e+08, f 45;
+#X symbolatom 252 704 45 0 0 1 - - - 8.58927e+08 0, f 45;
 #X obj 210 396 t b b b b;
 #X text 324 579 sends to specific server channel:;
 #X text 324 592 instrument# wavetable/env;
@@ -76,7 +77,7 @@
 #000000 #000000;
 #X obj 691 374 loadbang;
 #X obj 622 679 tosymbol;
-#X symbolatom 622 704 45 0 0 1 - - - 8.58927e+08, f 45;
+#X symbolatom 622 704 45 0 0 1 - - - 8.58927e+08 0, f 45;
 #X obj 580 396 t b b b b;
 #X text 697 579 sends to specific server channel:;
 #X text 697 592 instrument# wavetable/env;
@@ -112,7 +113,7 @@
 #X text 1236 283 instrument# wavetable/env;
 #X obj 1236 200 list prepend broadcast;
 #X obj 1337 226 tosymbol;
-#X symbolatom 1337 251 29 0 0 0 - - - 9.0926e+08, f 29;
+#X symbolatom 1337 251 29 0 0 0 - - - 9.0926e+08 0, f 29;
 #X obj 1236 225 list trim;
 #X obj 1236 175 list prepend %instruments%;
 #X obj 1236 175 list prepend %instruments%;
@@ -123,7 +124,7 @@
 #X text 1526 283 instrument# wavetable/env;
 #X obj 1526 200 list prepend broadcast;
 #X obj 1627 226 tosymbol;
-#X symbolatom 1627 251 17 0 0 0 - - - 9.0926e+08, f 17;
+#X symbolatom 1627 251 51 0 0 0 - - - 9.0926e+08 0, f 51;
 #X obj 1526 225 list trim;
 #X obj 1526 175 list prepend %instruments%;
 #X obj 1526 175 list prepend %instruments%;

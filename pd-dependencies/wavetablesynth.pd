@@ -62,7 +62,7 @@
 for debugging;
 #X obj 12 33 gate 1 0;
 #X obj 75 33 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
-1 1;
+0 1;
 #X obj 12 5 inlet;
 #X obj 830 287 bng 15 250 50 0 \$0-instrupdate r-null empty 17 7 0
 10 #fcfcfc #000000 #000000;
@@ -231,13 +231,13 @@ for debugging;
 #X obj 644 361 list prepend %instruments%;
 #X obj 75 53 s \$0-midion;
 #X obj 830 307 tgl 15 0 s-null \$0-midion empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 827 302 ggee/image ./ui-images/transparent.png 0 1 25 25 empty
 empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X obj 273 6 cnv 15 8 8 empty empty Canvas 24 6 0 10 #ffffff #00ffff
 0;
 #X obj 93 167 r \$0-octave;
-#N canvas 51 892 1018 396 tracker-fx 0;
+#N canvas 51 892 1018 396 tracker-fx 1;
 #X obj 146 15 inlet;
 #X obj 115 335 outlet;
 #X text 185 66 Route FX Messages - Z is no FX, f 35;
@@ -289,7 +289,7 @@ empty empty 25 25 1 0 10 #000000 0 -8 12.5 12.5 0 0 1;
 #X obj 36 76 s \$0-trnote;
 #X obj 723 201 r \$0-trnote;
 #X obj 36 233 t b f;
-#N canvas 67 427 450 406 0xy 0;
+#N canvas 32 752 450 406 0xy 0;
 #X obj 119 10 inlet;
 #X obj 44 375 outlet;
 #X obj 17 101 r \$12;
